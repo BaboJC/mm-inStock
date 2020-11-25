@@ -1,4 +1,6 @@
 import chevron from "../assets/Icons/chevron_right-24px.svg"
+import trash from "../assets/Icons/delete_outline-24px.svg"
+import pencil from "../assets/Icons/edit-24px.svg"
 
 function WarehouseListItem(props) {
   return (
@@ -28,6 +30,10 @@ function WarehouseListItem(props) {
         <h4 className="warehouse-item__label">contact information</h4>
         <p className="warehouse-item__info">{props.contact.phone}</p>
         <p className="warehouse-item__info">{props.contact.email}</p>
+      </div>
+      <div className="warehouse-item__actions">
+        <img className="warehouse-item__icon" src={trash} alt="delete button" />
+        <img className="warehouse-item__icon" src={pencil} alt="edit button" />
       </div>
     </li>
   )

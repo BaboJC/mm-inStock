@@ -12,6 +12,9 @@ function WarehousePage(props) {
             placeholder="Search..."
           />
         </form>
+        <button className="warehouse__add-warehouse">
+          + Add New Warehouse
+        </button>
       </div>
       <ul className="warehouse__list">
         {props.warehouseList.map((warehouse) => (
