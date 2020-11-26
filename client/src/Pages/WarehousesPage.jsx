@@ -46,7 +46,7 @@ class WarehousePage extends React.Component {
         <ul className="warehouse__list">
           {this.state.warehouses.map((warehouse) => (
             <WarehouseListItem
-              key={warehouse.id}
+              id={warehouse.id}
               name={warehouse.name}
               address={warehouse.address}
               city={warehouse.city}

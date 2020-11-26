@@ -8,14 +8,15 @@ function WarehouseListItem(props) {
     <li className="warehouse-item" key={props.id}>
       <div className="warehouse-item__section">
         <h4 className="warehouse-item__label">warehouse</h4>
-        <h3 className="warehouse-item__info--link">
-          {props.name}
+        <h3 className="warehouse-item__info--link">{props.name}</h3>
+        <Link to={`/warehouses/${props.id}`}>
           <img
             className="warehouse-item__chevron"
             src={chevron}
             alt="chevron"
           />
-        </h3>
+        </Link>
+        <p>{props.id}</p>
       </div>
       <div className="warehouse-item__section">
         <h4 className="warehouse-item__label">address</h4>

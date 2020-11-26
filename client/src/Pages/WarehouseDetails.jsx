@@ -11,6 +11,7 @@ class WarehouseDetails extends React.Component {
   getWarehouseDetails(id) {
     Axios.get(`http://localhost:5000/warehouses/${id}`)
       .then((response) => {
+        console.log(response)
         this.setState({
           warehouseInfo: response.data,
         })
@@ -21,15 +22,14 @@ class WarehouseDetails extends React.Component {
   }
 
   componentDidMount() {
-    this.getWarehouseDetails("2922c286-16cd-4d43-ab98-c79f698aeab0")
+    this.getWarehouseDetails("90ac3319-70d1-4a51-b91d-ba6c2464408c")
+    console.log(this.props.match)
   }
 
-  componentDidUpdate() {
-    console.log(this.state.warehouseInfo.contact.name)
-  }
+  componentDidUpdate(prevProps, prevState) {}
 
   render() {
-    const { name, address, city, country } = this.state.warehouseInfo
+    const { name, address, city, country, contact } = this.state.warehouseInfo
 
     return (
       <main className="main">
@@ -54,9 +54,7 @@ class WarehouseDetails extends React.Component {
           <div className="warehouse-details__contact">
             <div className="warehouse-details__contact-name">
               <h4 className="warehouse-item__label">contact name:</h4>
-              <p className="warehouse-item__info">
-                {/* contact continue off here */}
-              </p>
+              <p className="warehouse-item__info">contact</p>
             </div>
           </div>
         </section>
