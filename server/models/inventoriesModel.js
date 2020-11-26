@@ -53,12 +53,17 @@ function deleteItem(id) {
 
 // Edit inventory item
 function editItem(id, data) {
-  const itemsArr = list();
+  const itemsArr = listInventories();
   const itemIndex = itemsArr.findIndex((item) => item.id === id);
   itemsArr.splice(itemIndex, 1, {
     id: id,
-    title: data.title,
+    warehouseID: data.warehouseID,
+    warehouseName: data.warehouseName,
+    itemName: data.itemName,
     description: data.description,
+    category: data.category,
+    status: data.status,
+    quantity: data.quantity
   });
   fs.writeFileSync(dataInventories, JSON.stringify(itemsArr));
   return itemsArr;

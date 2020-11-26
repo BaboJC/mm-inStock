@@ -11,4 +11,7 @@ router.get('/:id', inventoriesController.getItemByID);
 // DELETE /inventories/:id
 router.delete('/:id', inventoriesController.deleteItem);
 
+// PUT /inventories/:id
+router.put('/:id', inventoriesController.editItem);
+
 module.exports = router;

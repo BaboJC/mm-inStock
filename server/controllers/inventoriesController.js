@@ -31,9 +31,14 @@ function deleteItem(req, res) {
   res.json(items.deleteItem(req.params.id));
 }
 
+function editItem(req, res) {
+  res.json(items.editItem(req.params.id, req.body));
+}
+
 module.exports = {
   getAllItems,
   getItemByID,
   createNewItem,
-  deleteItem
+  deleteItem,
+  editItem
 }
