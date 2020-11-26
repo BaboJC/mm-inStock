@@ -49,6 +49,19 @@ function deleteItem(id) {
     console.log(`Array length after splice is ${itemsArr.length}`);
     fs.writeFileSync(dataInventories, JSON.stringify(itemsArr));
     return itemsArr;
-  }
+}
 
-module.exports = { listInventories, getByID, deleteItem };
+// Edit inventory item
+function editItem(id, data) {
+  const itemsArr = list();
+  const itemIndex = itemsArr.findIndex((item) => item.id === id);
+  itemsArr.splice(itemIndex, 1, {
+    id: id,
+    title: data.title,
+    description: data.description,
+  });
+  fs.writeFileSync(dataInventories, JSON.stringify(itemsArr));
+  return itemsArr;
+}
+
+module.exports = { listInventories, getByID, deleteItem, editItem };
