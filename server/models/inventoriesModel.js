@@ -1,10 +1,9 @@
 // Libraries
 const fs=require('fs');
-const path=require('path');
 const { v4: uuid } = require('uuid');
 
 // Data file
-const dataInventories=path.join(__dirname, '../data/inventories.json');
+const dataInventories='./data/inventories.json';
 
 // Item object constructor
 function NewInventoryItem(warehouseID, warehouseName, itemName, description, category, status, quantity) {
@@ -21,6 +20,7 @@ function NewInventoryItem(warehouseID, warehouseName, itemName, description, cat
 // List array data from JSON file
 function listInventories(){
     const data=fs.readFileSync(dataInventories);
+    console.log(JSON.parse(data));
     return JSON.parse(data);
 }
 
@@ -32,3 +32,5 @@ function getInventoriesByID(id){
         return filteredItems;
     }
 }
+
+module.exports = { listInventories };

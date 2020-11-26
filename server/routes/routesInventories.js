@@ -2,12 +2,9 @@ const express=require('express');
 const router=express.Router();
 const inventoriesController = require('../controllers/inventoriesController');
 
-router.get('/',(req, res)=>{
-    res.json(inventoriesController.getAllItems)
-});
+// Get inventory items
+router.get('/', inventoriesController.getAllItems);
 
-router.get(('/'),(req,  res)=>{
-    res.json(inventoriesController.getItemsByID);
-})
+router.get('/:id', inventoriesController.getItemByID);
 
 module.exports=router;

@@ -1,11 +1,12 @@
 const items = require('../models/inventoriesModel');
 
 function getAllItems(_req, res) {
-    res.status(200).json(items.list());
+    res.status(200).json(items.listInventories());
 }
   
 function getItemByID(req, res) {
     res.json(items.getByID(req.params.id).shift());
+    console.log('Its working');
 }
 
 function createNewItem(req, res) {
@@ -27,3 +28,13 @@ function createNewItem(req, res) {
     res.status(201).json(items.add(newItem));
 }
 
+function deleteItem(req, res) {
+  res.json(items.deleteItem(req.params.id));
+}
+
+module.exports = {
+  getAllItems,
+  getItemByID,
+  createNewItem,
+  deleteItem
+}
