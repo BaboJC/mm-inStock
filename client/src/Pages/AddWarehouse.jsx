@@ -1,12 +1,12 @@
 import arrowback from "../assets/Icons/arrow_back-24px.svg"
-import WarehouseFormInput from "./WarehouseFormInput"
+import WarehouseFormInput from "../components/WarehouseFormInput"
 
-function EditWarehouse() {
+function AddWarehouse() {
   return (
     <main className="edit-warehouse">
       <h1 className="edit-warehouse__title">
         <img className="return-button" src={arrowback} alt="back button" />
-        Edit Warehouse
+        Add New Warehouse
       </h1>
       <form className="warehouse-form">
         <section className="warehouse-form__section">
@@ -25,11 +25,13 @@ function EditWarehouse() {
         </section>
         <section className="warehouse-form__buttons">
           <button className="warehouse-form__button">Cancel</button>
-          <button className="warehouse-form__button--blue">Save</button>
+          <button className="warehouse-form__button--blue">
+            +Add Warehouse
+          </button>
         </section>
       </form>
     </main>
   )
 }
 
-export default EditWarehouse
+export default AddWarehouse
