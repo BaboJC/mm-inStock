@@ -14,6 +14,7 @@ class App extends React.Component {
         <Header />
         <Switch>
           <Route path="/" exact component={WarehousePage} />
+          <Route path="/add" exact component={AddWarehouse} />
           <Route
             path="/warehouse/:warehouseID"
             exact
@@ -23,7 +24,6 @@ class App extends React.Component {
             path="/warehouse/:warehouseID/edit"
             component={EditWarehouse}
           />
-          <Route path="/warehouse/add" exact component={AddWarehouse} />
         </Switch>
       </div>
     )

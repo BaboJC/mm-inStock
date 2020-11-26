@@ -1,5 +1,5 @@
-function WarehouseDetails() {
-  return <h1>Warehouse Details</h1>
+function WarehouseDetails(props) {
+  return <main className="main"></main>
 }
 
 export default WarehouseDetails

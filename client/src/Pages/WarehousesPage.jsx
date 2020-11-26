@@ -1,42 +1,34 @@
 import React from "react"
 import WarehouseListItem from "../components/WarehouseListItem"
+import axios from "axios"
+import { Link } from "react-router-dom"
 
 class WarehousePage extends React.Component {
   state = {
-    warehouses: [
-      {
-        id: "2922c286-16cd-4d43-ab98-c79f698aeab0",
-        name: "Manhattan",
-        address: "503 Broadway",
-        city: "New York",
-        country: "USA",
-        contact: {
-          name: "Parmin Aujla",
-          position: "Warehouse Manager",
-          phone: "+1 (646) 123-1234",
-          email: "paujla@instock.com",
-        },
-      },
-      {
-        id: "5bf7bd6c-2b16-4129-bddc-9d37ff8539e9",
-        name: "King West",
-        address: "469 King Street West",
-        city: "Toronto",
-        country: "CAN",
-        contact: {
-          name: "Greame Lyon",
-          position: "Warehouse Manager",
-          phone: "+1 (646) 123-1234",
-          email: "glyon@instock.com",
-        },
-      },
-    ],
+    warehouses: [],
+  }
+
+  getWarehouseList() {
+    axios
+      .get("http://localhost:5000/warehouses")
+      .then((response) => {
+        this.setState({
+          warehouses: response.data,
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
+  componentDidMount() {
+    this.getWarehouseList()
   }
 
   render() {
     return (
-      <main className="warehouse">
-        <div className="warehouse__top">
+      <main className="main">
+        <div className="warehouse">
           <h1 className="warehouse__title">Warehouses</h1>
           <form className="warehouse__form">
             <input
@@ -45,9 +37,11 @@ class WarehousePage extends React.Component {
               placeholder="Search..."
             />
           </form>
-          <button className="warehouse__add-warehouse">
-            + Add New Warehouse
-          </button>
+          <Link to="/add">
+            <button className="warehouse__add-warehouse">
+              + Add New Warehouse
+            </button>
+          </Link>
         </div>
         <ul className="warehouse__list">
           {this.state.warehouses.map((warehouse) => (
