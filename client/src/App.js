@@ -15,15 +15,8 @@ class App extends React.Component {
         <Switch>
           <Route path="/" exact component={WarehousePage} />
           <Route path="/add" exact component={AddWarehouse} />
-          <Route
-            path="/warehouse/:warehouseID"
-            exact
-            component={WarehouseDetails}
-          />
-          <Route
-            path="/warehouse/:warehouseID/edit"
-            component={EditWarehouse}
-          />
+          <Route path="/warehouses/:id" component={WarehouseDetails} />
+          <Route path="/warehouses/:id/edit" component={EditWarehouse} />
         </Switch>
       </div>
     )
