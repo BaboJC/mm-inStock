@@ -26,7 +26,7 @@ function getWarehousesByID(id){
         return filteredItems;
     }
 }
-router.get(('/'),(req,  res)=>{
+router.get(('/:id'),(req,  res)=>{
     res.json(getWarehousesByID(req.params.id).shift());
 })
 
