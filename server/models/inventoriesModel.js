@@ -33,4 +33,10 @@ function getInventoriesByID(id){
     }
 }
 
-module.exports = { listInventories };
+// Get item by ID param /inventories/:id
+function getByID(id) {
+    const itemsArr = listInventories();
+    return itemsArr.filter((item) => item.id === id);
+  }
+
+module.exports = { listInventories, getByID };
