@@ -20,7 +20,6 @@ function NewInventoryItem(warehouseID, warehouseName, itemName, description, cat
 // List array data from JSON file
 function listInventories(){
     const data=fs.readFileSync(dataInventories);
-    console.log(JSON.parse(data));
     return JSON.parse(data);
 }
 
@@ -37,6 +36,19 @@ function getInventoriesByID(id){
 function getByID(id) {
     const itemsArr = listInventories();
     return itemsArr.filter((item) => item.id === id);
+}
+
+// Delete item by id
+function deleteItem(id) {
+    const itemsArr = listInventories();
+    console.log(`Array is ${itemsArr}`);
+    console.log(`Array length is ${itemsArr.length}`);
+    const itemIndex = itemsArr.findIndex((item) => item.id === id);
+    console.log(`itemIndex is ${itemIndex}`);
+    itemsArr.splice(itemIndex, 1);
+    console.log(`Array length after splice is ${itemsArr.length}`);
+    fs.writeFileSync(dataInventories, JSON.stringify(itemsArr));
+    return itemsArr;
   }
 
-module.exports = { listInventories, getByID };
+module.exports = { listInventories, getByID, deleteItem };

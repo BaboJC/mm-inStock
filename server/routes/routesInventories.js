@@ -1,10 +1,14 @@
-const express=require('express');
-const router=express.Router();
+const express = require('express');
+const router = express.Router();
 const inventoriesController = require('../controllers/inventoriesController');
 
-// Get inventory items
+// GET /inventories
 router.get('/', inventoriesController.getAllItems);
 
+// GET /inventories/:id
 router.get('/:id', inventoriesController.getItemByID);
 
-module.exports=router;
+// DELETE /inventories/:id
+router.delete('/:id', inventoriesController.deleteItem);
+
+module.exports = router;
