@@ -16,12 +16,12 @@ class App extends React.Component {
           <Route path="/" exact component={WarehousePage} />
           <Route path="/add" exact component={AddWarehouse} />
           <Route
-            path="/warehouse/:warehouseID"
+            path="/warehouses/:warehouseID"
             exact
             component={WarehouseDetails}
           />
           <Route
-            path="/warehouse/:warehouseID/edit"
+            path="/warehouses/:warehouseID/edit"
             component={EditWarehouse}
           />
         </Switch>
