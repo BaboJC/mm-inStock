@@ -6,7 +6,6 @@ function getAllItems(_req, res) {
   
 function getItemByID(req, res) {
     res.json(items.getByID(req.params.id).shift());
-    console.log('Its working');
 }
 
 function createNewItem(req, res) {
