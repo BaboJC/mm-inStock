@@ -1,3 +1,13 @@
+@font-face {
+  font-family: TitilliumWeb-Regular;
+  src: url("../assets/fonts/TitilliumWeb-Regular.svg") format("svg"), url("../assets/fonts/TitilliumWeb-Regular.ttf") format("ttf"), url("../assets/fonts/TitilliumWeb-Regular.woff") format("woff"), url("../assets/fonts/TitilliumWeb-Regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: TitilliumWeb-SemiBold;
+  src: url("../assets/fonts/TitilliumWeb-SemiBold.svg") format("svg"), url("../assets/fonts/TitilliumWeb-SemiBold.ttf") format("ttf"), url("../assets/fonts/TitilliumWeb-SemiBold.woff") format("woff"), url("../assets/fonts/TitilliumWeb-SemiBold.woff2") format("woff2");
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
