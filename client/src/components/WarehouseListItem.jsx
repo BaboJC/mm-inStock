@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 
 function WarehouseListItem(props) {
   return (
-    <li className="warehouse-item" key={props.id}>
+    <li className="warehouse-item">
       <div className="warehouse-item__section">
         <h4 className="warehouse-item__label">warehouse</h4>
         <h3 className="warehouse-item__info--link">{props.name}</h3>
@@ -35,7 +35,7 @@ function WarehouseListItem(props) {
       </div>
       <div className="warehouse-item__actions">
         <img className="warehouse-item__icon" src={trash} alt="delete button" />
-        <Link to="/:warehouseID/edit">
+        <Link to={`/warehouses/${props.id}/edit`}>
           <img
             className="warehouse-item__icon"
             src={pencil}

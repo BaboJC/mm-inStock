@@ -1,6 +1,7 @@
 import Axios from "axios"
 import React from "react"
 import backButton from "../assets/Icons/arrow_back-24px.svg"
+import { Link } from "react-router-dom"
 
 class WarehouseDetails extends React.Component {
   state = {
@@ -11,7 +12,6 @@ class WarehouseDetails extends React.Component {
   getWarehouseDetails(id) {
     Axios.get(`http://localhost:5000/warehouses/${id}`)
       .then((response) => {
-        console.log(response)
         this.setState({
           warehouseInfo: response.data,
         })
@@ -22,11 +22,9 @@ class WarehouseDetails extends React.Component {
   }
 
   componentDidMount() {
-    this.getWarehouseDetails("90ac3319-70d1-4a51-b91d-ba6c2464408c")
-    console.log(this.props.match)
+    const { id } = this.props.match.params
+    this.getWarehouseDetails(id)
   }
-
-  componentDidUpdate(prevProps, prevState) {}
 
   render() {
     const { name, address, city, country, contact } = this.state.warehouseInfo
@@ -35,11 +33,13 @@ class WarehouseDetails extends React.Component {
       <main className="main">
         <div className="warehouse-details">
           <h1 className="warehouse-details__title">
-            <img
-              className="warehouse__back"
-              src={backButton}
-              alt="back button"
-            />
+            <Link to="/">
+              <img
+                className="warehouse__back"
+                src={backButton}
+                alt="back button"
+              />
+            </Link>
             {name}
           </h1>
           {/* <img className="warehouse-details__edit" src="" alt="edit button"/> */}
@@ -54,7 +54,15 @@ class WarehouseDetails extends React.Component {
           <div className="warehouse-details__contact">
             <div className="warehouse-details__contact-name">
               <h4 className="warehouse-item__label">contact name:</h4>
-              <p className="warehouse-item__info">contact</p>
+              <p className="warehouse-item__info">{contact && contact.name}</p>
+              <p className="warehhouse-item__info">
+                {contact && contact.position}
+              </p>
+            </div>
+            <div className="warehouse-details__contact-information">
+              <h4 className="warehouse-item__label">contact information:</h4>
+              <p className="warehouse-item__info">{contact && contact.phone}</p>
+              <p className="warehouse-item__info">{contact && contact.email}</p>
             </div>
           </div>
         </section>
