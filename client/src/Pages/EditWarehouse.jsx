@@ -33,7 +33,7 @@ class EditWarehouse extends React.Component {
     const { name, address, city, country, contact } = this.state.warehouseInfo
 
     return (
-      <main className="edit-warehouse">
+      <main className="main">
         <h1 className="edit-warehouse__title">
           <img className="return-button" src={arrowback} alt="back button" />
           Edit Warehouse
