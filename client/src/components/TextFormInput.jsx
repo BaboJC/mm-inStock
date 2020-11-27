@@ -1,4 +1,4 @@
-function WarehouseFormInput(props) {
+function TextFormInput(props) {
   return (
     <div className="warehouse-form__container">
       <label className="warehouse-form__label" htmlFor={props.inputName}>
@@ -14,4 +14,4 @@ function WarehouseFormInput(props) {
   )
 }
 
-export default WarehouseFormInput
+export default TextFormInput
