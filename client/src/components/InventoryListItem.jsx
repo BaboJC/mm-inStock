@@ -3,13 +3,13 @@ import trash from "../assets/Icons/delete_outline-24px.svg"
 import pencil from "../assets/Icons/edit-24px.svg"
 import { Link } from "react-router-dom"
 
-function WarehouseListItem(props) {
+function InventoryListItem(props) {
   return (
     <li className="warehouse-item">
       <div className="warehouse-item__section">
-        <h4 className="warehouse-item__label">warehouse</h4>
-        <h3 className="warehouse-item__info--link">{props.name}</h3>
-        <Link to={`/warehouses/${props.id}`}>
+        <h4 className="warehouse-item__label">inventory item</h4>
+        <h3 className="warehouse-item__info--link">{props.item}</h3>
+        <Link to={`/inventories/${props.id}`}>
           <img
             className="warehouse-item__chevron"
             src={chevron}
@@ -18,23 +18,20 @@ function WarehouseListItem(props) {
         </Link>
       </div>
       <div className="warehouse-item__section">
-        <h4 className="warehouse-item__label">address</h4>
-        <p className="warehouse-item__info">
-          {props.address}, {props.city}, {props.country}
-        </p>
+        <h4 className="warehouse-item__label">category</h4>
+        <p className="warehouse-item__info">{props.item}</p>
       </div>
       <div className="warehouse-item__section">
-        <h4 className="warehouse-item__label">contact name</h4>
-        <p className="warehouse-item__info">{props.contact.name}</p>
+        <h4 className="warehouse-item__label">status</h4>
+        <p className="warehouse-item__info">{props.status}</p>
       </div>
       <div className="warehouse-item__section">
-        <h4 className="warehouse-item__label">contact information</h4>
-        <p className="warehouse-item__info">{props.contact.phone}</p>
-        <p className="warehouse-item__info">{props.contact.email}</p>
+        <h4 className="warehouse-item__label">qty</h4>
+        <p className="warehouse-item__info">{props.quantity}</p>
       </div>
       <div className="warehouse-item__actions">
         <img className="warehouse-item__icon" src={trash} alt="delete button" />
-        <Link to={`/warehouses/${props.id}/edit`}>
+        <Link to={`/inventories/${props.id}/edit`}>
           <img
             className="warehouse-item__icon"
             src={pencil}
@@ -46,4 +43,4 @@ function WarehouseListItem(props) {
   )
 }
 
-export default WarehouseListItem
+export default InventoryListItem
