@@ -33,32 +33,34 @@ class InventoryList extends React.Component {
   render() {
     return (
       <main className="main">
-        <div className="warehouse">
-          <h1 className="warehouse__title">Inventory</h1>
-          <form className="warehouse__form">
-            <input
-              className="warehouse__searchbar"
-              type="text"
-              placeholder="Search..."
-            />
-          </form>
-          <Link to="/inventories/add">
-            <button className="warehouse__add-warehouse">+ Add New Item</button>
-          </Link>
+        <div className="card-look">
+          <div className="title">
+            <h1 className="title__h1">Inventory</h1>
+            <form className="search-form">
+              <input
+                className="search-form__searchbar"
+                type="text"
+                placeholder="Search..."
+              />
+            </form>
+            <Link to="/inventories/add">
+              <button className="title__add-button">+ Add New Item</button>
+            </Link>
+          </div>
+          <ul className="list">
+            {this.state.inventories.map((inventory) => (
+              <InventoryListItem
+                key={inventory.id}
+                id={inventory.id}
+                item={inventory.itemName}
+                category={inventory.category}
+                status={inventory.status}
+                quantity={inventory.quantity}
+                warehouse={inventory.warehouseName}
+              />
+            ))}
+          </ul>
         </div>
-        <ul className="warehouse__list">
-          {this.state.inventories.map((inventory) => (
-            <InventoryListItem
-              key={inventory.id}
-              id={inventory.id}
-              item={inventory.itemName}
-              category={inventory.category}
-              status={inventory.status}
-              quantity={inventory.quantity}
-              warehouse={inventory.warehouseName}
-            />
-          ))}
-        </ul>
       </main>
     )
   }

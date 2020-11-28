@@ -1,15 +1,15 @@
 @mixin phone {
-    @media (min-width: $phone-breakpoint) {
-      @content;
-    }
+  @media (min-width: $phone-breakpoint) {
+    @content;
   }
-  @mixin tablet {
-    @media (min-width: $tablet-breakpoint) {
-      @content;
-    }
+}
+@mixin tablet($tablet-breakpoint) {
+  @media (min-width: $tablet-breakpoint) {
+    @content;
   }
-  @mixin desktop {
-    @media (min-width: $desktop-breakpoint) {
-      @content;
-    }
+}
+@mixin desktop($desktop-breakpoint) {
+  @media (min-width: $desktop-breakpoint) {
+    @content;
   }
+}

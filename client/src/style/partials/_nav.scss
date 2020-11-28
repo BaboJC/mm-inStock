@@ -1,0 +1,50 @@
+.nav {
+  background-color: $nav-background;
+  height: 12.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 1.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+
+  &__center-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  &__logo {
+    height: 1.75rem;
+    margin-bottom: 1.794rem;
+  }
+
+  &__navigation {
+    margin-top: 0;
+    padding-left: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  &__item {
+    color: $button-text;
+    font-size: 0.813rem;
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__active {
+    background-color: $nav-active-background;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    border-radius: 1.25rem;
+  }
+}

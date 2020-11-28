@@ -28,34 +28,34 @@ class WarehousePage extends React.Component {
   render() {
     return (
       <main className="main">
-        <div className="warehouse">
-          <h1 className="warehouse__title">Warehouses</h1>
-          <form className="warehouse__form">
-            <input
-              className="warehouse__searchbar"
-              type="text"
-              placeholder="Search..."
-            />
-          </form>
-          <Link to="/add">
-            <button className="warehouse__add-warehouse">
-              + Add New Warehouse
-            </button>
-          </Link>
+        <div className="card-look">
+          <div className="title">
+            <h1 className="title__h1">Warehouses</h1>
+            <form className="search-form">
+              <input
+                className="search-form__searchbar"
+                type="text"
+                placeholder="Search..."
+              />
+            </form>
+            <Link to="/warehouses/add">
+              <button className="title__add-button">+ Add New Warehouse</button>
+            </Link>
+          </div>
+          <ul className="list">
+            {this.state.warehouses.map((warehouse) => (
+              <WarehouseListItem
+                key={warehouse.id}
+                id={warehouse.id}
+                name={warehouse.name}
+                address={warehouse.address}
+                city={warehouse.city}
+                country={warehouse.country}
+                contact={warehouse.contact}
+              />
+            ))}
+          </ul>
         </div>
-        <ul className="warehouse__list">
-          {this.state.warehouses.map((warehouse) => (
-            <WarehouseListItem
-              key={warehouse.id}
-              id={warehouse.id}
-              name={warehouse.name}
-              address={warehouse.address}
-              city={warehouse.city}
-              country={warehouse.country}
-              contact={warehouse.contact}
-            />
-          ))}
-        </ul>
       </main>
     )
   }

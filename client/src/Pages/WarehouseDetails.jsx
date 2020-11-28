@@ -33,7 +33,7 @@ class WarehouseDetails extends React.Component {
       <main className="main">
         <div className="warehouse-details">
           <h1 className="warehouse-details__title">
-            <Link to="/">
+            <Link to="/warehouses">
               <img
                 className="warehouse__back"
                 src={backButton}
