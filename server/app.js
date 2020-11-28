@@ -20,6 +20,6 @@ app.use('/warehouses',warehouses)
 app.use('/inventories',inventories)
 
 // Listen
-app.listen (port, () => {
-    console.log(`listening at http://localhost:${port}`);
+app.listen (5000, () => {
+    console.log(`listening at http://localhost:5000`);
 });

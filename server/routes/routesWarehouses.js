@@ -32,13 +32,9 @@ router.get(('/:id'),(req,  res)=>{
 
 function addWarehouses(body){
     const itemList=listWarehouses();
-    const item=NewWarehouses(body)
-    // const itemList=listWarehouses.contact();
-    // const contactItem=NewContactItem(contact.name,contact.position,contact.phone,contact.email);
-    itemList.push(item)
-    // itemList.push(contactItem);
-    fs.writeFileSync(warehousesFile, Json.stringify(itemList))
-    
+    const item=NewWarehouses(body);
+    itemList.push(item);
+    fs.writeFileSync(dataWarehouses, JSON.stringify(itemList));
     return itemList
 }
 
@@ -52,7 +48,7 @@ function NewWarehouses(body){
             name:body.contact.name,
             position:body.contact.position,
             phone:body.contact.phone,
-            email:body.contact.email,
+            email:body.contact.email
         }]
 
     }
@@ -60,7 +56,21 @@ function NewWarehouses(body){
 router.post('/',(req, res)=>{
     res.json(addWarehouses(req.body));
 });
-router.post('/',(req, res)=>{
-    res.json(addWarehouses(req.contact));
-});
+
+function deleteWarehouse (id){
+    const listWarehouse = listWarehouses();
+    const deleted = listWarehouse.find((warehouses)=>warehouses.id===id);
+    if(deleted){
+        newArray = listWarehouse.filter(warehouses=>warehouses.id !== id);
+        fs.writeFileSync(dataWarehouses, JSON.stringify(newArray)); 
+        return ("Warehouse Deleted!",newArray);
+    }
+    else {
+        return ("The warehouse does not exist");
+    }
+
+}
+router.delete(('/:id'),(req,res)=>{
+    res.json(deleteWarehouse(req.params.id))
+})
 module.exports=router;

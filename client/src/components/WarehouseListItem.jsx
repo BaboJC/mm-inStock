@@ -2,6 +2,7 @@ import chevron from "../assets/Icons/chevron_right-24px.svg"
 import trash from "../assets/Icons/delete_outline-24px.svg"
 import pencil from "../assets/Icons/edit-24px.svg"
 import { Link } from "react-router-dom"
+import WarehouseDeleteButton from './WarehouseDeleteButton';
 
 function WarehouseListItem(props) {
   return (
@@ -34,7 +35,10 @@ function WarehouseListItem(props) {
         <p className="warehouse-item__info">{props.contact.email}</p>
       </div>
       <div className="warehouse-item__actions">
-        <img className="warehouse-item__icon" src={trash} alt="delete button" />
+
+        <WarehouseDeleteButton/>
+        {/* <img className="warehouse-item__icon" src={trash} onClick={()=>{props.deleteWarehouse(props.id)}} alt="delete button" /> */}
+         
         <Link to={`/warehouses/${props.id}/edit`}>
           <img
             className="warehouse-item__icon"
