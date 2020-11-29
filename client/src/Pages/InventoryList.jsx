@@ -32,36 +32,34 @@ class InventoryList extends React.Component {
 
   render() {
     return (
-      <main className="main">
-        <div className="card-look">
-          <div className="title">
-            <h1 className="title__h1">Inventory</h1>
-            <form className="search-form">
-              <input
-                className="search-form__searchbar"
-                type="text"
-                placeholder="Search..."
-              />
-            </form>
-            <Link to="/inventories/add">
-              <button className="title__add-button">+ Add New Item</button>
-            </Link>
-          </div>
-          <ul className="list">
-            {this.state.inventories.map((inventory) => (
-              <InventoryListItem
-                key={inventory.id}
-                id={inventory.id}
-                item={inventory.itemName}
-                category={inventory.category}
-                status={inventory.status}
-                quantity={inventory.quantity}
-                warehouse={inventory.warehouseName}
-              />
-            ))}
-          </ul>
+      <div className="card-look">
+        <div className="title">
+          <h1 className="title__h1">Inventory</h1>
+          <form className="search-form">
+            <input
+              className="search-form__searchbar"
+              type="text"
+              placeholder="Search..."
+            />
+          </form>
+          <Link to="/inventories/add">
+            <button className="title__add-button">+ Add New Item</button>
+          </Link>
         </div>
-      </main>
+        <ul className="list">
+          {this.state.inventories.map((inventory) => (
+            <InventoryListItem
+              key={inventory.id}
+              id={inventory.id}
+              item={inventory.itemName}
+              category={inventory.category}
+              status={inventory.status}
+              quantity={inventory.quantity}
+              warehouse={inventory.warehouseName}
+            />
+          ))}
+        </ul>
+      </div>
     )
   }
 }

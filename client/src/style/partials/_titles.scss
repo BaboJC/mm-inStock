@@ -1,7 +1,6 @@
 .title {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  border-bottom: 1px solid $border-line;
   &__h1 {
     font-size: 1.75rem;
     margin-bottom: 1rem;
@@ -10,17 +9,9 @@
 
   &__add-button {
     width: 100%;
-    background-color: $button-submit;
-    color: $button-text;
-    padding-top: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-radius: 1.25rem;
     margin-bottom: 2rem;
-    outline: none;
-    border-style: none;
-    &:hover {
-      background-color: $nav-background;
-    }
+    @include button();
+    @include button-main();
   }
 }
 
@@ -29,16 +20,21 @@
   &__searchbar {
     width: 100%;
     height: 2rem;
-    padding-left: 1rem;
-    padding-right: 1rem;
-    border-radius: 1.25rem;
-    background: url("../assets/Icons/search-24px.svg") no-repeat right center;
+    background: url("../assets/Icons/search-24px.svg") no-repeat 95%;
     background-size: 1.1rem 1.1rem;
     margin-bottom: 1.5rem;
-    border: 1px solid $border-line;
-    &:focus {
-      outline: 0 none;
-      border: 1px solid $button-submit;
-    }
+    @include input-field();
+  }
+}
+
+.alt-title {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  &__return {
+    width: 2rem;
+    margin-top: 2.5rem;
+    margin-right: 0.75rem;
   }
 }

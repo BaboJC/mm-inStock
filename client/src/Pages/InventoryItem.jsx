@@ -3,56 +3,82 @@ import backButton from "../assets/Icons/arrow_back-24px.svg"
 import { Link } from "react-router-dom"
 
 class InventoryItem extends React.Component {
-  state = {}
+  state = {
+    inventoryItem: {
+      id: "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+      warehouseID: "2922c286-16cd-4d43-ab98-c79f698aeab0",
+      warehouseName: "Manhattan",
+      itemName: "Television",
+      description:
+        'This 50", 4K LED TV provides a crystal-clear picture and vivid colors.',
+      category: "Electronics",
+      status: "In Stock",
+      quantity: 500,
+    },
+  }
 
   render() {
-    // const {
-    //   itemName,
-    //   description,
-    //   category,
-    //   status,
-    //   quantity,
-    //   warehouseName,
-    // } = this.state.inventoryItem
+    const {
+      itemName,
+      description,
+      category,
+      status,
+      quantity,
+      warehouseName,
+    } = this.state.inventoryItem
     return (
-      <main className="main">
-        <div className="warehouse-details">
-          <h1 className="warehouse-details__title">
-            <Link to="/inventories">
-              <img
-                className="warehouse__back"
-                src={backButton}
-                alt="back button"
-              />
-            </Link>
-            {/* {itemName} */}
-          </h1>
+      <div className="card-look">
+        <div className="alt-title">
+          <Link to="/inventories">
+            <img
+              className="alt-title__return"
+              src={backButton}
+              alt="back button"
+            />
+          </Link>
+          <h1 className="title__h1">{itemName}</h1>
         </div>
-        <section className="inventory-item__description">
-          <div className="inventory-item__item-des">
-            <h4 className="warehouse-item__label">item description</h4>
-            {/* <p className="warehouse-item__info">{description}</p> */}
+        <section className="inventory-item">
+          <div className="inventory-item__container">
+            <h4 className="inventory-item__label">item description:</h4>
+            <p className="inventory-item__info">{description}</p>
           </div>
-          <div className="inventory-item__category">
-            <h4 className="warehouse-item__label">category</h4>
-            {/* <p className="warehouse-item__info">{category}</p> */}
-          </div>
-        </section>
-        <section className="inventory-item__stats">
-          <div className="inventory-item__status">
-            <h4 className="warehouse-item__label">status</h4>
-            {/* <p className="warehouse-item__info">{status}</p> */}
-          </div>
-          <div className="inventory-item__warehouse">
-            <h4 className="warehouse-item__label">warehouse</h4>
-            {/* <p className="warehouse-item__info">{warehouseName}</p> */}
-          </div>
-          <div className="inventory-item__quantity">
-            <h4 className="warehouse-item__label">quantity</h4>
-            {/* <p className="warehouse-item__info">{quantity}</p> */}
+          <div className="inventory-item__container">
+            <h4 className="inventory-item__label">category:</h4>
+            <p className="inventory-item__info">{category}</p>
           </div>
         </section>
-      </main>
+        <section className="inventory-item">
+          <div className="inventory-item__container">
+            <h4 className="inventory-item__label">status:</h4>
+            <div
+              className={
+                status === "In Stock"
+                  ? "inventory-item__green"
+                  : "inventory-item__red"
+              }
+            >
+              <p
+                className={
+                  status === "In Stock"
+                    ? "inventory-item__info inventory-item__info--instock"
+                    : "inventory-item__info inventory-item__info--outofstock"
+                }
+              >
+                {status}
+              </p>
+            </div>
+          </div>
+          <div className="inventory-item__container">
+            <h4 className="inventory-item__label">warehouse:</h4>
+            <p className="inventory-item__info">{warehouseName}</p>
+          </div>
+          <div className="inventory-item__container">
+            <h4 className="inventory-item__label">quantity:</h4>
+            <p className="inventory-item__info">{quantity}</p>
+          </div>
+        </section>
+      </div>
     )
   }
 }

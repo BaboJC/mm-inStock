@@ -1,0 +1,52 @@
+.form {
+  &__section {
+    border-top: 1px solid $border-line;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  &__h2 {
+    font-size: 1.25rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+  }
+  &__label {
+    margin-bottom: 0.25rem;
+  }
+  &__h3 {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &__input {
+    height: 2.25rem;
+    margin-bottom: 1rem;
+    @include input-field();
+  }
+  &__buttons {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__button {
+    width: 8.6875rem;
+    margin-bottom: 1rem;
+    @include button();
+    border: 1px solid $border-line;
+    background-color: white;
+    font-weight: 700;
+    color: $nav-background;
+    &:hover {
+      color: $button-submit;
+      border: 1px solid $button-submit;
+    }
+    &--save {
+      @include button-main();
+    }
+  }
+}

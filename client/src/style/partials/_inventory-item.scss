@@ -1,0 +1,25 @@
+.inventory-item {
+  border-top: 1px solid $border-line;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-bottom: 1.5rem;
+  height: 10rem;
+  &__label {
+    color: $label-text;
+    font-size: 0.688rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    margin-bottom: 0.2rem;
+  }
+  &__info {
+    font-size: 0.8125rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &__green {
+    background-color: rgba(21, 132, 99, 0.07);
+  }
+}

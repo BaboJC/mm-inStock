@@ -1,15 +1,15 @@
 function TextFormInput(props) {
   return (
-    <div className="warehouse-form__container">
-      <label className="warehouse-form__label" htmlFor={props.inputName}>
-        {props.inputValue}
-        <input
-          className="warehouse-form__input"
-          name={props.inputName}
-          placeholder={props.inputValue}
-          value={props.fill}
-        />
+    <div className="form__container">
+      <label className="form__label" htmlFor={props.inputName}>
+        <h3 className="form__h3">{props.inputValue}</h3>
       </label>
+      <input
+        className="form__input"
+        name={props.inputName}
+        placeholder={props.inputValue}
+        defaultValue={props.fill}
+      />
     </div>
   )
 }
