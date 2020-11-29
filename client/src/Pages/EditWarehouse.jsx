@@ -33,14 +33,19 @@ class EditWarehouse extends React.Component {
     const { name, address, city, country, contact } = this.state.warehouseInfo
 
     return (
-      <main className="main">
-        <h1 className="edit-warehouse__title">
-          <img className="return-button" src={arrowback} alt="back button" />
-          Edit Warehouse
-        </h1>
-        <form className="warehouse-form">
-          <section className="warehouse-form__section">
-            <h2 className="warehouse-form__title">Warehouse Details</h2>
+      <div className="card-look">
+        <div className="alt-title">
+          <img
+            className="alt-title__return"
+            src={arrowback}
+            alt="back button"
+          />
+          <h1 className="title__h1">Edit Warehouse</h1>
+        </div>
+
+        <form className="form">
+          <section className="form__section">
+            <h2 className="form__h2">Warehouse Details</h2>
             <TextFormInput
               inputValue="Warehouse Name"
               inputName="name"
@@ -58,8 +63,8 @@ class EditWarehouse extends React.Component {
               fill={country}
             />
           </section>
-          <section className="warehouse-form__section">
-            <h2 className="warehouse-form__title">Contact Details</h2>
+          <section className="form__section">
+            <h2 className="form__title">Contact Details</h2>
             <TextFormInput
               inputValue="Contact Name"
               inputName="contact"
@@ -81,12 +86,16 @@ class EditWarehouse extends React.Component {
               fill={contact && contact.email}
             />
           </section>
-          <section className="warehouse-form__buttons">
-            <button className="warehouse-form__button">Cancel</button>
-            <button className="warehouse-form__button--blue">Save</button>
+          <section className="form__buttons">
+            <button className="form__button">Cancel</button>
+            <input
+              className="form__button form__button--save"
+              type="submit"
+              value="Save"
+            />
           </section>
         </form>
-      </main>
+      </div>
     )
   }
 }

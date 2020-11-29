@@ -31,7 +31,7 @@ class WarehouseDetails extends React.Component {
     const { name, address, city, country, contact } = this.state.warehouseInfo
     return (
       <main className="main">
-        <div className="warehouse-details">
+        <div className="title">
           <h1 className="warehouse-details__title">
             <Link to="/warehouses">
               <img

@@ -13,3 +13,32 @@
     @content;
   }
 }
+
+@mixin input-field() {
+  padding-left: 1rem;
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 1.25rem;
+  border: 1px solid $border-line;
+  &:focus {
+    outline: 0 none;
+    border: 1px solid $button-submit;
+  }
+}
+
+@mixin button() {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+  border-radius: 1.25rem;
+  outline: none;
+  border-style: none;
+}
+
+@mixin button-main() {
+  background-color: $button-submit;
+  color: $button-text;
+  &:hover {
+    background-color: $nav-background;
+    color: white;
+  }
+}
