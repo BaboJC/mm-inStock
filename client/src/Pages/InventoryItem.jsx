@@ -51,7 +51,23 @@ class InventoryItem extends React.Component {
         <section className="inventory-item">
           <div className="inventory-item__container">
             <h4 className="inventory-item__label">status:</h4>
-            <p className="inventory-item__info">{status}</p>
+            <div
+              className={
+                status === "In Stock"
+                  ? "inventory-item__green"
+                  : "inventory-item__red"
+              }
+            >
+              <p
+                className={
+                  status === "In Stock"
+                    ? "inventory-item__info inventory-item__info--instock"
+                    : "inventory-item__info inventory-item__info--outofstock"
+                }
+              >
+                {status}
+              </p>
+            </div>
           </div>
           <div className="inventory-item__container">
             <h4 className="inventory-item__label">warehouse:</h4>
