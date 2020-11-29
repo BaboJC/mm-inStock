@@ -67,7 +67,9 @@ class WarehousePage extends React.Component {
                 country={warehouse.country}
                 contact={warehouse.contact}
               />
-              <WarehouseDeleteButton deleteWarehouse={this.deleteWarehouse} />
+              <div className="hidden">
+                <WarehouseDeleteButton deleteWarehouse={this.deleteWarehouse} />
+              </div>
             </>
           ))}
         </ul>

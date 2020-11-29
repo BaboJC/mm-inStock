@@ -11,6 +11,7 @@ import InventoryItem from "./Pages/InventoryItem"
 import EditInventory from "./Pages/EditInventory"
 import AddInventory from "./Pages/AddInventory"
 import Footer from "./components/Footer"
+import WarehouseDeletePopUp from "./Pages/WarehouseDeletePopUp"
 
 class App extends React.Component {
   render() {
@@ -22,6 +23,10 @@ class App extends React.Component {
             <Route path="/warehouses" exact component={WarehousePage} />
             <Route path="/warehouses/add" component={AddWarehouse} />
             <Route path="/warehouses/:id" exact component={WarehouseDetails} />
+            <Route
+              path="warehouses/:id/delete"
+              component={WarehouseDeletePopUp}
+            />
             <Route path="/warehouses/:id/edit" component={EditWarehouse} />
             <Route path="/inventories" exact component={InventoryList} />
             <Route path="/inventories/add" component={AddInventory} />

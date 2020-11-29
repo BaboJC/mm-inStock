@@ -2,7 +2,7 @@ import chevron from "../assets/Icons/chevron_right-24px.svg"
 import trash from "../assets/Icons/delete_outline-24px.svg"
 import pencil from "../assets/Icons/edit-24px.svg"
 import { Link } from "react-router-dom"
-import WarehouseDeleteButton from './WarehouseDeleteButton';
+import WarehouseDeleteButton from "./WarehouseDeleteButton"
 
 function WarehouseListItem(props) {
   return (
@@ -32,19 +32,22 @@ function WarehouseListItem(props) {
           <p className="list__info">{props.contact.phone}</p>
           <p className="list__info">{props.contact.email}</p>
         </div>
-      </div>features_warehouseAPI/Hargul
-      <div className="warehouse-item__actions">
+      </div>
 
-        <WarehouseDeleteButton/>
-        {/* <img className="warehouse-item__icon" src={trash} onClick={()=>{props.deleteWarehouse(props.id)}} alt="delete button" /> */}
-         
+      <div className="warehouse-item__actions">
+        <Link to="warehouses/:id/delete">
+          <img
+            className="warehouse-item__icon"
+            src={trash}
+            alt="delete button"
+          />
+        </Link>
         <Link to={`/warehouses/${props.id}/edit`}>
           <img
             className="warehouse-item__icon"
             src={pencil}
             alt="edit button"
           />
-
         </Link>
       </div>
     </li>

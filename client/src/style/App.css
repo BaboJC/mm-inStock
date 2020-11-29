@@ -135,6 +135,10 @@ li {
   background-color: #f7f8f9;
 }
 
+.hidden {
+  display: none;
+}
+
 .title {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -228,7 +232,7 @@ li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  height: 8rem;
+  height: 8.2rem;
   margin-bottom: 0.5rem;
   padding-bottom: 0.75rem;
 }
