@@ -1,6 +1,6 @@
 import Axios from "axios"
 import arrowback from "../assets/Icons/arrow_back-24px.svg"
-import WarehouseFormInput from "../components/WarehouseFormInput"
+import TextFormInput from "../components/TextFormInput"
 
 function AddWarehouse() {
   const addNewWarehouse = (event) => {
@@ -46,17 +46,17 @@ function AddWarehouse() {
       <form className="warehouse-form" onSubmit={addNewWarehouse}>
         <section className="warehouse-form__section">
           <h2 className="warehouse-form__title">Warehouse Details</h2>
-          <WarehouseFormInput inputValue="Warehouse Name" inputName="name" />
-          <WarehouseFormInput inputValue="Street Address" inputName="street" />
-          <WarehouseFormInput inputValue="City" inputName="city" />
-          <WarehouseFormInput inputValue="Country" inputName="country" />
+          <TextFormInput inputValue="Warehouse Name" inputName="name" />
+          <TextFormInput inputValue="Street Address" inputName="street" />
+          <TextFormInput inputValue="City" inputName="city" />
+          <TextFormInput inputValue="Country" inputName="country" />
         </section>
         <section className="warehouse-form__section">
           <h2 className="warehouse-form__title">Contact Details</h2>
-          <WarehouseFormInput inputValue="Contact Name" inputName="contact" />
-          <WarehouseFormInput inputValue="Position" inputName="position" />
-          <WarehouseFormInput inputValue="Phone Number" inputName="phone" />
-          <WarehouseFormInput inputValue="Email" inputName="email" />
+          <TextFormInput inputValue="Contact Name" inputName="contact" />
+          <TextFormInput inputValue="Position" inputName="position" />
+          <TextFormInput inputValue="Phone Number" inputName="phone" />
+          <TextFormInput inputValue="Email" inputName="email" />
         </section>
         <section className="warehouse-form__buttons">
           <button className="warehouse-form__button">Cancel</button>

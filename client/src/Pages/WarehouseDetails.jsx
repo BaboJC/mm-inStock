@@ -2,6 +2,7 @@ import Axios from "axios"
 import React from "react"
 import backButton from "../assets/Icons/arrow_back-24px.svg"
 import { Link } from "react-router-dom"
+import InventoryListItem from "../components/InventoryListItem"
 
 class WarehouseDetails extends React.Component {
   state = {
@@ -28,12 +29,11 @@ class WarehouseDetails extends React.Component {
 
   render() {
     const { name, address, city, country, contact } = this.state.warehouseInfo
-
     return (
       <main className="main">
         <div className="warehouse-details">
           <h1 className="warehouse-details__title">
-            <Link to="/">
+            <Link to="/warehouses">
               <img
                 className="warehouse__back"
                 src={backButton}
@@ -67,6 +67,18 @@ class WarehouseDetails extends React.Component {
             </div>
           </div>
         </section>
+        <ul className="warehouse__list">
+          {this.state.warehouseInventory.map((inventory) => (
+            <InventoryListItem
+              key={inventory.id}
+              id={inventory.id}
+              item={inventory.itemName}
+              category={inventory.category}
+              status={inventory.status}
+              quantity={inventory.quantity}
+            />
+          ))}
+        </ul>
       </main>
     )
   }

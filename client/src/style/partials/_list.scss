@@ -1,0 +1,58 @@
+.list {
+  padding-left: 0;
+  margin-top: 0;
+  &__item {
+    height: 12.25rem;
+    padding-top: 1rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    border-top: 1px solid $border-line;
+  }
+  &__info-container {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    height: 8rem;
+    margin-bottom: 0.5rem;
+    padding-bottom: 0.75rem;
+  }
+  &__label {
+    color: $label-text;
+    font-size: 0.688rem;
+    text-transform: uppercase;
+    margin-top: 0;
+    margin-bottom: 0.2rem;
+  }
+  &__info {
+    font-size: 0.8125rem;
+    max-width: 8rem;
+    margin-top: 0;
+    margin-bottom: 0;
+    &--link {
+      color: $button-submit;
+      font-weight: 700;
+    }
+  }
+  &__center-container {
+    display: flex;
+    align-items: center;
+    padding: 0;
+  }
+  &__chevron {
+    width: 1.5rem;
+  }
+  &__link {
+    height: 11px;
+    margin-bottom: 0.8rem;
+  }
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+}
+
+[p~="In Stock"] {
+  background-color: red;
+}

@@ -1,11 +1,12 @@
 * {
   box-sizing: border-box;
-  border: 1px dashed grey;
+  // border: 1px dashed grey;
 }
 
 body {
   margin: 0;
   padding: 0;
+  font-family: "TitilliumWeb-Regular";
 }
 a {
   color: inherit;
@@ -13,10 +14,4 @@ a {
 }
 li {
   list-style-type: none;
-}
-
-.card-look {
-  max-width: 21.438rem;
-  margin-top: -4rem;
-  background-color: white;
 }

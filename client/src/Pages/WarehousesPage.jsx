@@ -43,6 +43,7 @@ class WarehousePage extends React.Component {
   render() {
     return (
       <main className="main">
+features_warehouseAPI/Hargul
         <div className="warehouse">
           <h1 className="warehouse__title">Warehouses</h1>
           <form className="warehouse__form">
@@ -77,6 +78,7 @@ class WarehousePage extends React.Component {
 
           ))}
         </ul>
+
       </main>
     )
   }

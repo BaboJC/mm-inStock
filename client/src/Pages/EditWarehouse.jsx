@@ -1,7 +1,7 @@
 import React from "react"
 import Axios from "axios"
 import arrowback from "../assets/Icons/arrow_back-24px.svg"
-import WarehouseFormInput from "../components/WarehouseFormInput"
+import TextFormInput from "../components/TextFormInput"
 
 class EditWarehouse extends React.Component {
   state = {
@@ -33,7 +33,7 @@ class EditWarehouse extends React.Component {
     const { name, address, city, country, contact } = this.state.warehouseInfo
 
     return (
-      <main className="edit-warehouse">
+      <main className="main">
         <h1 className="edit-warehouse__title">
           <img className="return-button" src={arrowback} alt="back button" />
           Edit Warehouse
@@ -41,22 +41,18 @@ class EditWarehouse extends React.Component {
         <form className="warehouse-form">
           <section className="warehouse-form__section">
             <h2 className="warehouse-form__title">Warehouse Details</h2>
-            <WarehouseFormInput
+            <TextFormInput
               inputValue="Warehouse Name"
               inputName="name"
               fill={name}
             />
-            <WarehouseFormInput
+            <TextFormInput
               inputValue="Street Address"
               inputName="street"
               fill={address}
             />
-            <WarehouseFormInput
-              inputValue="City"
-              inputName="city"
-              fill={city}
-            />
-            <WarehouseFormInput
+            <TextFormInput inputValue="City" inputName="city" fill={city} />
+            <TextFormInput
               inputValue="Country"
               inputName="country"
               fill={country}
@@ -64,22 +60,22 @@ class EditWarehouse extends React.Component {
           </section>
           <section className="warehouse-form__section">
             <h2 className="warehouse-form__title">Contact Details</h2>
-            <WarehouseFormInput
+            <TextFormInput
               inputValue="Contact Name"
               inputName="contact"
               fill={contact && contact.name}
             />
-            <WarehouseFormInput
+            <TextFormInput
               inputValue="Position"
               inputName="position"
               fill={contact && contact.position}
             />
-            <WarehouseFormInput
+            <TextFormInput
               inputValue="Phone Number"
               inputName="phone"
               fill={contact && contact.phone}
             />
-            <WarehouseFormInput
+            <TextFormInput
               inputValue="Email"
               inputName="email"
               fill={contact && contact.email}
