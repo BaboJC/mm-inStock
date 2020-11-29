@@ -63,6 +63,7 @@ class WarehouseDetails extends React.Component {
               <h4 className="warehouse-item__label">contact information:</h4>
               <p className="warehouse-item__info">{contact && contact.phone}</p>
               <p className="warehouse-item__info">{contact && contact.email}</p>
+              <link>Delete</link>
             </div>
           </div>
         </section>
