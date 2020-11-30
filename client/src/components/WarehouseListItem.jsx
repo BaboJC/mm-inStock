@@ -35,7 +35,7 @@ function WarehouseListItem(props) {
       </div>
 
       <div className="warehouse-item__actions">
-        <Link to="warehouses/:id/delete">
+        <Link to={`warehouses/${props.id}/delete`}>
           <img
             className="warehouse-item__icon"
             src={trash}

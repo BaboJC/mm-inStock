@@ -11,7 +11,6 @@
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  border: 1px dashed grey;
 }
 
 body {
@@ -401,9 +400,12 @@ li {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
+  padding-bottom: 1.5rem;
+}
+
+.inventory-item--wrap {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-  padding-bottom: 1.5rem;
   height: 10rem;
 }
 
@@ -421,7 +423,37 @@ li {
   margin-bottom: 0;
 }
 
+.inventory-item__info--green {
+  color: #158463;
+  font-weight: 700;
+}
+
+.inventory-item__info--red {
+  color: #c94515;
+  font-weight: 700;
+}
+
 .inventory-item__green {
   background-color: rgba(21, 132, 99, 0.07);
+  width: 3.8125rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 1.25rem;
+}
+
+.inventory-item__red {
+  background-color: rgba(201, 69, 21, 0.07);
+  width: 5.375rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-radius: 1.25rem;
 }
 /*# sourceMappingURL=App.css.map */

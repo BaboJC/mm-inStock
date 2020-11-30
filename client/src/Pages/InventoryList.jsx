@@ -17,15 +17,15 @@ class InventoryList extends React.Component {
         quantity: 10000,
       },
       {
-        id: "4dd464d6-90b8-4330-91e0-bd1217811bd9",
+        id: "83433026-ca32-4c6d-bd86-a39ee8b7303e",
         warehouseID: "2922c286-16cd-4d43-ab98-c79f698aeab0",
         warehouseName: "Manhattan",
-        itemName: "Tent",
+        itemName: "Gym Bag",
         description:
-          "Perfect for spring or summer camping, this 1-person tent is easy to pack and has the option to become modular when used with other products.",
+          "Made out of military-grade synthetic materials, this gym bag is highly durable, water resistant, and easy to clean.",
         category: "Gear",
-        status: "In Stock",
-        quantity: 800,
+        status: "Out of Stock",
+        quantity: 0,
       },
     ],
   }
