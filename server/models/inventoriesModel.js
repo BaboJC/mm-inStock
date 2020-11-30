@@ -15,14 +15,14 @@ function NewInventoryItem(
   status,
   quantity
 ) {
-  this.id = uuid()
-  this.warehouseID = warehouseID
-  this.warehouseName = warehouseName
-  this.itemName = itemName
-  this.description = description
-  this.category = category
-  this.status = status
-  this.quantity = quantity
+  this.id = uuid();
+  this.warehouseID = warehouseID;
+  this.warehouseName = warehouseName;
+  this.itemName = itemName;
+  this.description = description;
+  this.category = category;
+  this.status = status;
+  this.quantity = quantity;
 }
 
 // List array data from JSON file

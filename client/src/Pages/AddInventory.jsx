@@ -1,8 +1,37 @@
+import Axios from "axios"
 import arrowback from "../assets/Icons/arrow_back-24px.svg"
 import TextFormInput from "../components/TextFormInput"
 import { Link } from "react-router-dom"
 
 function AddInventory() {
+  const addInventoryItem = (event) => {
+    event.preventDefault()
+    const form = event.target
+    // const warehouseID = form.warehouseID.value
+    const warehouseName = form.warehouseName.value
+    const itemName = form.itemName.value
+    const description = form.description.value
+    const category = form.category.value
+    const status = form.status.value
+    const quantity = form.quantity.value
+
+    const newItem = {
+      // warehouseID: warehouseID,
+      warehouseName: warehouseName,
+      itemName: itemName,
+      description: description,
+      category: category,
+      status: status,
+      quantity: quantity
+    }
+
+    Axios.post("http://localhost:5000/inventories/add", newItem)
+      .then(form.reset(), alert("New Item Added"))
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
   return (
     <div className="card-look">
       <div className="alt-title">
@@ -16,10 +45,10 @@ function AddInventory() {
         <h1 className="title__h1">Add New Inventory Item</h1>
       </div>
 
-      <form className="form">
+      <form className="form" onSubmit={addInventoryItem}>
         <section className="form__section">
           <h2 className="form__h2">Item Details</h2>
-          <TextFormInput inputValue="Item Name" input="name" />
+          <TextFormInput inputValue="Item Name" input="name" inputName="itemName" />
           <div className="form__container">
             <label className="form__label" htmlFor="description">
               <h3 className="form__h3">Description</h3>
@@ -34,8 +63,8 @@ function AddInventory() {
             <label className="form__label" htmlFor="category">
               <h3 className="form__h3">Category</h3>
             </label>
-            <select className="form__input form__input--select" name="category">
-              <option className="form__option" value="" selected="selected">
+            <select className="form__input form__input--select" name="category" defaultValue="Please select">
+              <option className="form__option" value="">
                 Please select
               </option>
               <option className="form__option" value="electronics">
@@ -78,12 +107,12 @@ function AddInventory() {
             <input className="form__input" name="quantity" defaultValue="0" />
           </div>
           <div className="form__container">
-            <label className="form__label" htmlFor="warehouse">
+            <label className="form__label" htmlFor="warehouseName">
               <h3 className="form__h3">Warehouse</h3>
             </label>
             <select
               className="form__input form__input--select"
-              name="warehouse"
+              name="warehouseName"
             >
               <option className="form__option" value="manhattan">
                 Manhattan
