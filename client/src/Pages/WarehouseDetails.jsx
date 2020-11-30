@@ -22,9 +22,22 @@ class WarehouseDetails extends React.Component {
       })
   }
 
+  getWarehouseInventory(id) {
+    Axios.get(`http://localhost:5000/inventories/warehouseid/${id}`)
+      .then((response) => {
+        this.setState({
+          warehouseInventory: response.data,
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
   componentDidMount() {
     const { id } = this.props.match.params
     this.getWarehouseDetails(id)
+    this.getWarehouseInventory(id)
   }
 
   render() {
