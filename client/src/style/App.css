@@ -135,10 +135,6 @@ li {
   background-color: #f7f8f9;
 }
 
-.hidden {
-  display: none;
-}
-
 .title {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -286,6 +282,12 @@ li {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.list__modal {
+  color: Black;
+  font-family: TitilliumWeb-SemiBold;
+  font-size: 20px;
 }
 
 .form__section {

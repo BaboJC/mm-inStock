@@ -23,10 +23,10 @@ class App extends React.Component {
             <Route path="/warehouses" exact component={WarehousePage} />
             <Route path="/warehouses/add" component={AddWarehouse} />
             <Route path="/warehouses/:id" exact component={WarehouseDetails} />
-            <Route
+            {/* <Route
               path="warehouses/:id/delete"
-              component={WarehouseDeletePopUp}
-            />
+              component={WarehouseDeleteModal}
+            /> */}
             <Route path="/warehouses/:id/edit" component={EditWarehouse} />
             <Route path="/inventories" exact component={InventoryList} />
             <Route path="/inventories/add" component={AddInventory} />

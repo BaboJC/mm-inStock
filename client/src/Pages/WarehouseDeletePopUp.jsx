@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import WarehouseDeleteButton from "../components/WarehouseDeleteButton"
+import WarehouseDeleteButton from "../components/WarehouseDeleteModal"
 
 class WarehousePopUp extends Component {
   render() {

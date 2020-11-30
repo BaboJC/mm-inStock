@@ -15,6 +15,8 @@ function AddWarehouse() {
     const phone = form.phone.value
     const email = form.email.value
 
+    console.log(contact)
+
     const newWarehouse = {
       name: name,
       street: street,

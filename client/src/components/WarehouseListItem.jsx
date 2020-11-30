@@ -1,10 +1,13 @@
+import React,{ useState } from 'react'
 import chevron from "../assets/Icons/chevron_right-24px.svg"
 import trash from "../assets/Icons/delete_outline-24px.svg"
 import pencil from "../assets/Icons/edit-24px.svg"
 import { Link } from "react-router-dom"
+import WarehouseDeleteModal from "./WarehouseDeleteModal"
 import WarehouseDeleteButton from "./WarehouseDeleteButton"
 
 function WarehouseListItem(props) {
+  const[isOpen, setIsOpen] = useState(false)
   return (
     <li className="list__item">
       <div className="list__info-container">
@@ -33,15 +36,20 @@ function WarehouseListItem(props) {
           <p className="list__info">{props.contact.email}</p>
         </div>
       </div>
-
+      <div>
+      <WarehouseDeleteModal open={isOpen} onClose={()=>setIsOpen(false)}deleteWarehouse={props.deleteWarehouse} id={props.id}>
+      <p className="list__modal"> Are you sure you want to delete {props.name} warehouse? </p>
+      
+      </WarehouseDeleteModal>
+      </div>
       <div className="warehouse-item__actions">
-        <Link to="warehouses/:id/delete">
+          <Link onClick={()=>setIsOpen(true)}>Open Modal
           <img
             className="warehouse-item__icon"
             src={trash}
             alt="delete button"
           />
-        </Link>
+          </Link>
         <Link to={`/warehouses/${props.id}/edit`}>
           <img
             className="warehouse-item__icon"
@@ -51,6 +59,7 @@ function WarehouseListItem(props) {
         </Link>
       </div>
     </li>
+   
   )
 }
 
