@@ -2,7 +2,6 @@ import Axios from "axios"
 import React from "react"
 import { Link } from "react-router-dom"
 import InventoryListItem from "../components/InventoryListItem"
-import axios from "axios"
 
 class InventoryList extends React.Component {
   state = {

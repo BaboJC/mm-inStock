@@ -66,7 +66,9 @@ function getByID(id) {
 }
 
 function getByWarehouseID(warehouseID) {
-  const itemsArr = listInventories()
+  const itemsArr = listInventories();
+//   console.log(itemsArr);
+//   console.log(itemsArr.filter((item => item.warehouseID === warehouseID)));
   return itemsArr.filter((item) => item.warehouseID === warehouseID)
 }
 
@@ -108,4 +110,5 @@ module.exports = {
   deleteItem,
   editItem,
   getByWarehouseID,
+  getInventoriesByID
 }
