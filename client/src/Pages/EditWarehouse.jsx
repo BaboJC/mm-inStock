@@ -2,6 +2,7 @@ import React from "react"
 import Axios from "axios"
 import arrowback from "../assets/Icons/arrow_back-24px.svg"
 import TextFormInput from "../components/TextFormInput"
+import { Link } from "react-router-dom"
 
 class EditWarehouse extends React.Component {
   state = {
@@ -35,11 +36,14 @@ class EditWarehouse extends React.Component {
     return (
       <div className="card-look">
         <div className="alt-title">
-          <img
-            className="alt-title__return"
-            src={arrowback}
-            alt="back button"
-          />
+          <Link to="/warehouses">
+            <img
+              className="alt-title__return"
+              src={arrowback}
+              alt="back button"
+            />
+          </Link>
+
           <h1 className="title__h1">Edit Warehouse</h1>
         </div>
 

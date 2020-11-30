@@ -10,31 +10,55 @@ class EditInventory extends React.Component {
 
   render() {
     return (
-      <main className="main">
-        <h1 className="edit-warehouse__title">
+      <div className="card-look">
+        <div className="alt-title">
           <Link to="/inventories">
-            <img className="return-button" src={arrowback} alt="back button" />
-            Edit Inventory Item
+            <img
+              className="alt-title__return"
+              src={arrowback}
+              alt="back button"
+            />
           </Link>
-        </h1>
-        <form className="inventory-form">
-          <section className="edit-inventory__item-details">
-            <h2 className="form-h2">Item Details</h2>
+          <h1 className="title__h1">Edit Inventory Item</h1>
+        </div>
+        <form className="form">
+          <section className="form__section">
+            <h2 className="form__h2">Item Details</h2>
             <TextFormInput inputValue="Item Name" input="name" />
-            <label className="warehouse-form__label">
-              Description
-              <textarea className="inventory-form__description" />
-            </label>
-            <label className="warehouse-form__label">
-              Category
-              <select className="form-section">
-                <option className="inventory-form__option">Electronics</option>
-                <option className="inventory-form__option">Gear</option>
-                <option className="inventory-form__option">Apparel</option>
-                <option className="inventory-form__option">Accessories</option>
-                <option className="inventory-form__option">Health</option>
+            <div className="form__container">
+              <label className="form__label">
+                <h3 className="form__h3">Description</h3>
+              </label>
+              <textarea
+                className="form__description"
+                placeholder="Please enter a brief description"
+              />
+            </div>
+            <div className="form__container">
+              <label className="form__label">
+                <h3 className="form__h3">Category</h3>
+              </label>
+              <select className="form__input form__input--select">
+                <option className="form__option" value="" selected="selected">
+                  Please select
+                </option>
+                <option className="form__option" value="electronics">
+                  Electronics
+                </option>
+                <option className="form__option" value="gear">
+                  Gear
+                </option>
+                <option className="form__option" value="apparel">
+                  Apparel
+                </option>
+                <option className="form__option" value="accessories">
+                  Accessories
+                </option>
+                <option className="form__option" value="health">
+                  Health
+                </option>
               </select>
-            </label>
+            </div>
           </section>
           <section className="form__section">
             <h2 className="form__h2">Item Availability</h2>
@@ -47,14 +71,14 @@ class EditInventory extends React.Component {
             <label className="warehouse-form__label">
               Warehouse
               <select className="form-section">
-                <option className="inventory-form__option">Manhattan</option>
-                <option className="inventory-form__option">King West</option>
-                <option className="inventory-form__option">Granville</option>
-                <option className="inventory-form__option">San Fran</option>
-                <option className="inventory-form__option">Santa Monica</option>
-                <option className="inventory-form__option">Seattle</option>
-                <option className="inventory-form__option">Montreal</option>
-                <option className="inventory-form__option">Boston</option>
+                <option className="form__option">Manhattan</option>
+                <option className="form__option">King West</option>
+                <option className="form__option">Granville</option>
+                <option className="form__option">San Fran</option>
+                <option className="form__option">Santa Monica</option>
+                <option className="form__option">Seattle</option>
+                <option className="form__option">Montreal</option>
+                <option className="form__option">Boston</option>
               </select>
             </label>
           </section>
@@ -67,7 +91,7 @@ class EditInventory extends React.Component {
             />
           </section>
         </form>
-      </main>
+      </div>
     )
   }
 }
