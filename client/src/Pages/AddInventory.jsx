@@ -1,8 +1,43 @@
 import arrowback from "../assets/Icons/arrow_back-24px.svg"
 import TextFormInput from "../components/TextFormInput"
 import { Link } from "react-router-dom"
+import Axios from "axios"
 
 function AddInventory() {
+  const addNewWarehouse = (event) => {
+    event.preventDefault()
+    const form = event.target
+    const name = form.name.value
+    const street = form.street.value
+    const city = form.city.value
+    const country = form.country.value
+    const contact = form.contact.value
+    const position = form.position.value
+    const phone = form.phone.value
+    const email = form.email.value
+
+    const newWarehouse = {
+      name: name,
+      street: street,
+      city: city,
+      country: country,
+      contact: [
+        {
+          name: contact,
+          position: position,
+          phone: phone,
+          email: email,
+        },
+      ],
+    }
+
+    Axios.post("http://localhost:5000/warehouses", newWarehouse)
+      .then(form.reset(), alert("New Warehouse Added"))
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
   return (
     <main className="main">
       <h1 className="edit-warehouse__title">
