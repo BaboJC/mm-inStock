@@ -30,40 +30,37 @@ class WarehouseDetails extends React.Component {
   render() {
     const { name, address, city, country, contact } = this.state.warehouseInfo
     return (
-      <main className="main">
-        <div className="title">
-          <h1 className="warehouse-details__title">
-            <Link to="/warehouses">
-              <img
-                className="warehouse__back"
-                src={backButton}
-                alt="back button"
-              />
-            </Link>
-            {name}
-          </h1>
+      <div className="card-look">
+        <div className="alt-title">
+          <Link to="/warehouses">
+            <img
+              className="alt-title__return"
+              src={backButton}
+              alt="back button"
+            />
+          </Link>
+          <h1 className="title__h1">{name}</h1>
           {/* <img className="warehouse-details__edit" src="" alt="edit button"/> */}
         </div>
-        <section className="warehouse-details__info">
-          <div className="warehouse-details__address">
-            <h4 className="warehouse-item__label">warehouse address:</h4>
-            <p className="warehouse-item__info">
-              {address}, {city}, {country}
-            </p>
-          </div>
-          <div className="warehouse-details__contact">
-            <div className="warehouse-details__contact-name">
-              <h4 className="warehouse-item__label">contact name:</h4>
-              <p className="warehouse-item__info">{contact && contact.name}</p>
-              <p className="warehhouse-item__info">
-                {contact && contact.position}
+        <section className="list__item">
+          <div className="list__info-container list__info-container--modified">
+            <div className="list__section">
+              <h4 className="list__label">warehouse address:</h4>
+              <p className="list__info">
+                {address}, {city}, {country}
               </p>
             </div>
-            <div className="warehouse-details__contact-information">
-              <h4 className="warehouse-item__label">contact information:</h4>
-              <p className="warehouse-item__info">{contact && contact.phone}</p>
-              <p className="warehouse-item__info">{contact && contact.email}</p>
-              <link>Delete</link>
+            <div className="list__bottom">
+              <div className="list__section">
+                <h4 className="list__label">contact name:</h4>
+                <p className="list__info">{contact && contact.name}</p>
+                <p className="list__info">{contact && contact.position}</p>
+              </div>
+              <div className="list__section">
+                <h4 className="list__label">contact information:</h4>
+                <p className="list__info">{contact && contact.phone}</p>
+                <p className="list__info">{contact && contact.email}</p>
+              </div>
             </div>
           </div>
         </section>
@@ -79,7 +76,7 @@ class WarehouseDetails extends React.Component {
             />
           ))}
         </ul>
-      </main>
+      </div>
     )
   }
 }

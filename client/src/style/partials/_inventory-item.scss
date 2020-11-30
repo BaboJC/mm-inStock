@@ -4,9 +4,12 @@
   padding-right: 1.5rem;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
   padding-bottom: 1.5rem;
-  height: 10rem;
+  &--wrap {
+    flex-wrap: wrap;
+    height: 10rem;
+  }
+
   &__label {
     color: $label-text;
     font-size: 0.688rem;
@@ -18,8 +21,27 @@
     font-size: 0.8125rem;
     margin-top: 0;
     margin-bottom: 0;
+    &--green {
+      color: $instock;
+      font-weight: 700;
+    }
+    &--red {
+      color: $outofstock;
+      font-weight: 700;
+    }
   }
   &__green {
     background-color: rgba(21, 132, 99, 0.07);
+    width: 3.8125rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 1.25rem;
+  }
+  &__red {
+    background-color: rgba(201, 69, 21, 0.07);
+    width: 5.375rem;
+    display: flex;
+    justify-content: center;
+    border-radius: 1.25rem;
   }
 }
