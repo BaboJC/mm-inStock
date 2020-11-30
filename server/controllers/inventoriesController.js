@@ -9,7 +9,7 @@ function getItemByID(req, res) {
 }
 
 function getItemByWarehouseID(req, res) {
-  res.json(items.getByWarehouseID(req.params.warehouseid).shift());
+  res.json(items.getByWarehouseID(req.params.warehouseid));
 }
 
 function createNewItem(req, res) {

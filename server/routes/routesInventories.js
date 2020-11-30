@@ -13,7 +13,7 @@ router.get("/:id", inventoriesController.getItemByID)
 
 //GET /inventories/warehouseid/:warehouseid
 router.get(
-  "/warehouseID/:warehouseid",
+  "/warehouseid/:warehouseid",
   inventoriesController.getItemByWarehouseID
 )
 

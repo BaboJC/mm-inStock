@@ -66,9 +66,7 @@ function getByID(id) {
 }
 
 function getByWarehouseID(warehouseID) {
-  const itemsArr = listInventories();
-//   console.log(itemsArr);
-//   console.log(itemsArr.filter((item => item.warehouseID === warehouseID)));
+  const itemsArr = listInventories()
   return itemsArr.filter((item) => item.warehouseID === warehouseID)
 }
 
