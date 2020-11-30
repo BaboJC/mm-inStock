@@ -23,6 +23,15 @@ function listInventories(){
     return JSON.parse(data);
 }
 
+// Add item to json file
+function add(data) {
+    const itemList = listInventories();
+    const item = new NewInventoryItem(data.warehouseID, data.warehouseName, data.itemName, data.description, data.category, data.status, data.quantity);
+    itemList.push(item);
+    fs.writeFileSync(dataInventories, JSON.stringify(itemList));
+    return itemList;
+  }
+
 // Get single inventory by ID
 function getInventoriesByID(id){
     const inventoriesArray=listInventories();
@@ -69,4 +78,4 @@ function editItem(id, data) {
   return itemsArr;
 }
 
-module.exports = { listInventories, getByID, deleteItem, editItem };
+module.exports = { listInventories, add, getByID, deleteItem, editItem };
