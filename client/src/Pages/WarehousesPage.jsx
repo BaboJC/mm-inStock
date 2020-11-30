@@ -1,12 +1,13 @@
 import React from "react"
 import WarehouseListItem from "../components/WarehouseListItem"
-import WarehouseDeleteButton from "../components/WarehouseDeleteButton"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import WarehousePopUp from "./WarehouseDeletePopUp"
 
 class WarehousePage extends React.Component {
   state = {
     warehouses: [],
+    deletePopUp: false,
   }
 
   getWarehouseList() {
@@ -35,6 +36,12 @@ class WarehousePage extends React.Component {
     })
   }
 
+  // toggleDelete() {
+  //   this.setState({
+  //     deletePopUp: !this.state.deletePopUp,
+  //   })
+  // }
+
   componentDidMount() {
     this.getWarehouseList()
   }
@@ -57,22 +64,21 @@ class WarehousePage extends React.Component {
         </div>
         <ul className="list">
           {this.state.warehouses.map((warehouse) => (
-            <>
-              <WarehouseListItem
-                key={warehouse.id}
-                id={warehouse.id}
-                name={warehouse.name}
-                address={warehouse.address}
-                city={warehouse.city}
-                country={warehouse.country}
-                contact={warehouse.contact}
-              />
-              <div className="hidden">
-                <WarehouseDeleteButton deleteWarehouse={this.deleteWarehouse} />
-              </div>
-            </>
+            <WarehouseListItem
+              key={warehouse.id}
+              id={warehouse.id}
+              name={warehouse.name}
+              address={warehouse.address}
+              city={warehouse.city}
+              country={warehouse.country}
+              contact={warehouse.contact}
+              // toggleDelete={this.toggleDelete.bind(this)}
+            />
           ))}
         </ul>
+        {/* {this.state.deletePopUp ? (
+          <WarehousePopUp cancelDelete={this.toggleDelete.bind(this)} />
+        ) : null} */}
       </div>
     )
   }

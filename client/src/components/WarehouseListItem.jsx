@@ -2,8 +2,12 @@ import chevron from "../assets/Icons/chevron_right-24px.svg"
 import trash from "../assets/Icons/delete_outline-24px.svg"
 import pencil from "../assets/Icons/edit-24px.svg"
 import { Link } from "react-router-dom"
+import WarehousePopUp from "../Pages/WarehouseDeletePopUp"
 
 function WarehouseListItem(props) {
+  // const toggleDelete() {
+  //   if (props.deleteState != false)
+  // }
   return (
     <li className="list__item">
       <div className="list__info-container">
@@ -34,9 +38,16 @@ function WarehouseListItem(props) {
       </div>
 
       <div className="list__actions">
-        <Link to={`warehouses/${props.id}/delete`}>
-          <img className="list__icon" src={trash} alt="delete button" />
-        </Link>
+        <input
+          className="list__icon"
+          type="image"
+          src={trash}
+          alt="delete button"
+          onClick={props.toggleDelete}
+        />
+        {/* {props.deleteState ? (
+          <WarehousePopUp closePopUp={props.toggleDelete} />
+        ) : null} */}
         <Link to={`/warehouses/${props.id}/edit`}>
           <img className="list__icon" src={pencil} alt="edit button" />
         </Link>
