@@ -93,7 +93,7 @@ class EditWarehouse extends React.Component {
           <section className="form__buttons">
             <button className="form__button">Cancel</button>
             <input
-              className="form__button form__button--save"
+              className="form__button form__button--blue"
               type="submit"
               value="Save"
             />

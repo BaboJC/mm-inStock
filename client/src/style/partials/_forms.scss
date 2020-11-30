@@ -43,13 +43,13 @@
     @include button();
     border: 1px solid $border-line;
     background-color: white;
-    font-weight: 700;
+    font-weight: 500;
     color: $nav-background;
     &:hover {
       color: $button-submit;
       border: 1px solid $button-submit;
     }
-    &--save {
+    &--blue {
       @include button-main();
     }
   }
@@ -59,7 +59,9 @@
     resize: none;
     @include input-field();
   }
-  &__options {
+  &__status-option {
+    margin-right: 4rem;
+    font-size: 0.8125rem;
   }
 }
 
