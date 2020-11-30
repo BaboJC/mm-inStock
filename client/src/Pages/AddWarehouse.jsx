@@ -1,6 +1,7 @@
 import Axios from "axios"
 import arrowback from "../assets/Icons/arrow_back-24px.svg"
 import TextFormInput from "../components/TextFormInput"
+import { Link } from "react-router-dom"
 
 function AddWarehouse() {
   const addNewWarehouse = (event) => {
@@ -38,36 +39,44 @@ function AddWarehouse() {
   }
 
   return (
-    <main className="edit-warehouse">
-      <h1 className="edit-warehouse__title">
-        <img className="return-button" src={arrowback} alt="back button" />
-        Add New Warehouse
-      </h1>
-      <form className="warehouse-form" onSubmit={addNewWarehouse}>
-        <section className="warehouse-form__section">
-          <h2 className="warehouse-form__title">Warehouse Details</h2>
+    <div className="card-look">
+      <div className="alt-title">
+        <Link to="/warehouses">
+          <img
+            className="alt-title__return"
+            src={arrowback}
+            alt="back button"
+          />
+        </Link>
+
+        <h1 className="title__h1">Edit Warehouse</h1>
+      </div>
+
+      <form className="form">
+        <section className="form__section">
+          <h2 className="form__h2">Warehouse Details</h2>
           <TextFormInput inputValue="Warehouse Name" inputName="name" />
           <TextFormInput inputValue="Street Address" inputName="street" />
           <TextFormInput inputValue="City" inputName="city" />
           <TextFormInput inputValue="Country" inputName="country" />
         </section>
-        <section className="warehouse-form__section">
-          <h2 className="warehouse-form__title">Contact Details</h2>
+        <section className="form__section">
+          <h2 className="form__title">Contact Details</h2>
           <TextFormInput inputValue="Contact Name" inputName="contact" />
           <TextFormInput inputValue="Position" inputName="position" />
           <TextFormInput inputValue="Phone Number" inputName="phone" />
           <TextFormInput inputValue="Email" inputName="email" />
         </section>
-        <section className="warehouse-form__buttons">
-          <button className="warehouse-form__button">Cancel</button>
+        <section className="form__buttons">
+          <button className="form__button">Cancel</button>
           <input
-            className="warehouse-form__button--blue"
+            className="form__button form__button--blue"
             type="submit"
             value="+Add Warehouse"
           />
         </section>
       </form>
-    </main>
+    </div>
   )
 }
 

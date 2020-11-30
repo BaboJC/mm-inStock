@@ -383,7 +383,7 @@ li {
   border-style: none;
   border: 1px solid #bdc5d5;
   background-color: white;
-  font-weight: 700;
+  font-weight: 500;
   color: #232940;
 }
 
@@ -392,12 +392,12 @@ li {
   border: 1px solid #2e66e5;
 }
 
-.form__button--save {
+.form__button--blue {
   background-color: #2e66e5;
   color: #ffffff;
 }
 
-.form__button--save:hover {
+.form__button--blue:hover {
   background-color: #232940;
   color: white;
 }
@@ -417,6 +417,11 @@ li {
 .form__description:focus {
   outline: 0 none;
   border: 1px solid #2e66e5;
+}
+
+.form__status-option {
+  margin-right: 4rem;
+  font-size: 0.8125rem;
 }
 
 select {
