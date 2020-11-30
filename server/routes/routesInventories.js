@@ -5,6 +5,9 @@ const inventoriesController = require('../controllers/inventoriesController');
 // GET /inventories
 router.get('/', inventoriesController.getAllItems);
 
+// POST /inventories/add
+router.post('/add', inventoriesController.createNewItem);
+
 // GET /inventories/:id
 router.get('/:id', inventoriesController.getItemByID);
 

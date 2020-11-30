@@ -9,7 +9,7 @@ function getItemByID(req, res) {
 }
 
 function createNewItem(req, res) {
-    if (!req.body.warehouseName || !req.body.itemName || !req.body.description || !req.body.category || !req.body.status || !req.body.quantity) {
+    if (!req.body.warehouseName || !req.body.itemName || !req.body.description || !req.body.category) {
       res.status(400).json({
         error: 'POST body must contain all requiredProperties',
         requiredProperties: ['warehouseName', 'itemName', 'description', 'category', 'quantity'],
@@ -17,6 +17,7 @@ function createNewItem(req, res) {
     }
   
     const newItem = {
+      warehouseID: req.body.warehouseID,
       warehouseName: req.body.warehouseName,
       itemName: req.body.itemName,
       description: req.body.description,
