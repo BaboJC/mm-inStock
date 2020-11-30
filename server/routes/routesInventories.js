@@ -11,9 +11,9 @@ router.post("/add", inventoriesController.createNewItem)
 // GET /inventories/:id
 router.get("/:id", inventoriesController.getItemByID)
 
-//GET /inventories/:warehouseid
+//GET /inventories/warehouseid/:warehouseid
 router.get(
-  "/warehouseid/:warehouseid",
+  "/warehouseID/:warehouseid",
   inventoriesController.getItemByWarehouseID
 )
 
