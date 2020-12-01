@@ -1,0 +1,20 @@
+.card-look {
+  width: 100%;
+  margin-top: -3rem;
+  background-color: white;
+  border-radius: 0.188rem;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+.main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  background-color: $main-background;
+}
+
+.hidden {
+  // display: none;
+}

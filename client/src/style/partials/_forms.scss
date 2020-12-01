@@ -1,0 +1,70 @@
+.form {
+  &__section {
+    border-top: 1px solid $border-line;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    padding-bottom: 0.5rem;
+  }
+  &__h2 {
+    font-size: 1.25rem;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 1rem;
+  }
+  &__label {
+    margin-bottom: 0.25rem;
+    font-weight: 700;
+  }
+  &__h3 {
+    font-size: 0.8125rem;
+    line-height: 1.25rem;
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+  &__input {
+    height: 2.25rem;
+    @include input-field();
+    &--select {
+      background: url("../assets/Icons/arrow_drop_down-24px.svg") no-repeat 95%;
+    }
+  }
+  &__buttons {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  &__button {
+    width: 8.6875rem;
+    margin-bottom: 1rem;
+    @include button();
+    border: 1px solid $border-line;
+    background-color: white;
+    font-weight: 500;
+    color: $nav-background;
+    &:hover {
+      color: $button-submit;
+      border: 1px solid $button-submit;
+    }
+    &--blue {
+      @include button-main();
+    }
+  }
+  &__description {
+    height: 7.5rem;
+    font-family: "TitilliumWeb-Regular";
+    resize: none;
+    @include input-field();
+  }
+  &__status-option {
+    margin-right: 4rem;
+    font-size: 0.8125rem;
+  }
+}
+
+select {
+  -webkit-appearance: none;
+}

@@ -1,0 +1,44 @@
+.title {
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  &__h1 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+    margin-top: 2rem;
+  }
+
+  &__add-button {
+    width: 100%;
+    margin-bottom: 2rem;
+    @include button();
+    @include button-main();
+  }
+
+  &__back {
+    margin-right: 0.75rem;
+  }
+}
+
+.search-form {
+  position: relative;
+  &__searchbar {
+    width: 100%;
+    height: 2rem;
+    background: url("../assets/Icons/search-24px.svg") no-repeat 95%;
+    background-size: 1.1rem 1.1rem;
+    margin-bottom: 1.5rem;
+    @include input-field();
+  }
+}
+
+.alt-title {
+  display: flex;
+  align-items: flex-start;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  &__return {
+    width: 2rem;
+    margin-top: 2.5rem;
+    margin-right: 0.75rem;
+  }
+}
