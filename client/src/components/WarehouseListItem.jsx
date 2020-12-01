@@ -8,8 +8,6 @@ import WarehouseDeleteButton from "./WarehouseDeleteButton"
 
 function WarehouseListItem(props) {
   
-function WarehouseListItem(props) {
-  
 
   return (
     <li className="list__item">
