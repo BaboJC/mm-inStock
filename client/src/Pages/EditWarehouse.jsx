@@ -8,7 +8,7 @@ class EditWarehouse extends React.Component {
   state = {
     warehouseInfo: {},
     
-    editedWarehouse:{}
+   
   }
 
   getWarehouseDetails(id) {
@@ -23,23 +23,32 @@ class EditWarehouse extends React.Component {
       })
   }
 
-  patchWarehouse(id){
-    Axios.patch(`http://localhost:5000/warehouses/${id}`)
-    .then((response)=>{
-      this.setState({
-        editedWarehouse:response.data,
-        
+  submitHandler=(warehouseInfo)=>{
+    warehouseInfo.preventDefault()
+      Axios.patch(`http://localhost:5000/warehouses/`,{warehouseInfo})
+      .then((response)=>{
+        this.setState({
+          warehouseInfo:response.data,
+        })
       })
       .catch((error) => {
         console.log(error)
     })
-  })
-}
+  }
+  // patchWarehouse(id){Axios.patch(`http://localhost:5000/warehouses/${id}`,this.state)
+  //     .then((response)=>{
+  //       this.setState({
+  //         warehouseInfo:response.data,
+  //       })
+  //       .catch((error) => {
+  //         console.log(error)
+  //     })
+  //   })
+  // }
   
   componentDidMount(){
     const { id } = this.props.match.params
     this.getWarehouseDetails(id)
-    this.patchWarehouse(id)
    
   }
   
@@ -47,18 +56,49 @@ class EditWarehouse extends React.Component {
 
   handleInputChange =(event)=> {
     console.dir(event.target)
+    console.log(event.target.name)
     if(event.target.name==='name'){
       const updateWarehouse={...this.state.warehouseInfo}
       updateWarehouse.name=event.target.value
       this.setState({warehouseInfo:updateWarehouse})
     }
-    if(event.target.country==='country'){
+    
+    if(event.target.name==='address'){
+      const updateWarehouse={...this.state.warehouseInfo}
+      updateWarehouse.address=event.target.value
+      this.setState({warehouseInfo:updateWarehouse})
+    }
+    if(event.target.name==='city'){
+      const updateWarehouse={...this.state.warehouseInfo}
+      updateWarehouse.city=event.target.value
+      this.setState({warehouseInfo:updateWarehouse})
+    }
+    if(event.target.name==='country'){
       const updateWarehouse={...this.state.warehouseInfo}
       updateWarehouse.country=event.target.value
       this.setState({warehouseInfo:updateWarehouse})
     }
+    if(event.target.name==='contact'){
+      const updateWarehouse={...this.state.warehouseInfo}
+      updateWarehouse.contact.name=event.target.value
+      this.setState({warehouseInfo:updateWarehouse})
+    }
+    if(event.target.name==='contact'){
+      const updateWarehouse={...this.state.warehouseInfo}
+      updateWarehouse.contact.position=event.target.value
+      this.setState({warehouseInfo:updateWarehouse})
+    }
+    if(event.target.name==='contact'){
+      const updateWarehouse={...this.state.warehouseInfo}
+      updateWarehouse.contact.phone=event.target.value
+      this.setState({warehouseInfo:updateWarehouse})
+    }
+    if(event.target.name==='contact'){
+      const updateWarehouse={...this.state.warehouseInfo}
+      updateWarehouse.contact.email=event.target.value
+      this.setState({warehouseInfo:updateWarehouse})
+    }
     console.log(this.state)
-    // this.setState({ value: event.target.value })
   }
 
   render() {
@@ -79,7 +119,7 @@ class EditWarehouse extends React.Component {
           <h1 className="title__h1">Edit Warehouse</h1>
         </div>
 
-        <form className="form">
+        <form className="form" onSubmit={this.submitHandler}>
           <section className="form__section">
             <h2 className="form__h2">Warehouse Details</h2>
             <TextFormInput
@@ -93,10 +133,13 @@ class EditWarehouse extends React.Component {
               inputValue="Street Address"
               inputName="address"
               fill={address}
-              
-              
+              handleInputChange={this.handleInputChange}
             />
-            <TextFormInput inputValue="City" inputName="city" fill={city} />
+            <TextFormInput 
+            inputValue="City"
+            inputName="city"
+            fill={city}
+            handleInputChange={this.handleInputChange} />
             <TextFormInput
               inputValue="Country"
               inputName="country"
@@ -110,30 +153,38 @@ class EditWarehouse extends React.Component {
               inputValue="Contact Name"
               inputName="contact"
               fill={contact && contact.name}
+              handleInputChange={this.handleInputChange}
             />
             <TextFormInput
               inputValue="Position"
               inputName="position"
               fill={contact && contact.position}
+              handleInputChange={this.handleInputChange}
             />
             <TextFormInput
               inputValue="Phone Number"
               inputName="phone"
               fill={contact && contact.phone}
+              handleInputChange={this.handleInputChange}
             />
             <TextFormInput
               inputValue="Email"
               inputName="email"
               fill={contact && contact.email}
+              handleInputChange={this.handleInputChange}
             />
           </section>
           <section className="form__buttons">
             <button className="form__button">Cancel</button>
-            <input
-              className="form__button form__button--blue"
-              type="submit"
-              value="Save"
-            />
+            {/* <input className="form__button form__button--blue" */}
+             {/* type="submit"
+              value="Save" */}
+             {/* /> */}
+            <button onClick={(warehouseInfo)=>{this.submitHandler(warehouseInfo)}}
+              className="form__button form__button--blue">Save
+             
+              </button>
+           
           </section>
         </form>
       </div>
