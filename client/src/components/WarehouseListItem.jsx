@@ -51,7 +51,6 @@ function WarehouseListItem(props) {
       </div>
       <div className="warehouse-item__actions">
         <Link onClick={() => setIsOpen(true)}>
-          Open Modal
           <img
             className="warehouse-item__icon"
             src={trash}
