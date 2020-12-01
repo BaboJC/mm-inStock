@@ -9,6 +9,7 @@ import WarehouseDeleteModal from "./WarehouseDeleteModal"
 function WarehouseListItem(props) {
   const[isOpen, setIsOpen] = useState(false)
 
+
   
 
   return (
