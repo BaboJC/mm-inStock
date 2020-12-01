@@ -4,9 +4,12 @@ import trash from "../assets/Icons/delete_outline-24px.svg"
 import pencil from "../assets/Icons/edit-24px.svg"
 import { Link } from "react-router-dom"
 import WarehouseDeleteModal from "./WarehouseDeleteModal"
-import WarehouseDeleteButton from "./WarehouseDeleteButton"
+
 
 function WarehouseListItem(props) {
+  const[isOpen, setIsOpen] = useState(false)
+
+
   
 
   return (
@@ -62,4 +65,4 @@ function WarehouseListItem(props) {
   )
 }
 
-export default WarehouseListItem
+export default WarehouseListItem;
