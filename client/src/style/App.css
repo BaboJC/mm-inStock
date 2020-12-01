@@ -13,6 +13,9 @@
           box-sizing: border-box;
 }
 
+<<<<<<< HEAD
+.header {
+=======
 body {
   margin: 0;
   padding: 0;
@@ -158,6 +161,7 @@ li {
 }
 
 .title__add-button:hover {
+>>>>>>> development
   background-color: #232940;
   color: white;
 }
@@ -209,6 +213,10 @@ li {
 .list {
   padding-left: 0;
   margin-top: 0;
+}
+
+.list__section--warehouse {
+  display: none;
 }
 
 .list__item {

@@ -51,6 +51,7 @@ class InventoryList extends React.Component {
               status={inventory.status}
               quantity={inventory.quantity}
               warehouse={inventory.warehouseName}
+              warehouseSection={true}
             />
           ))}
         </ul>

@@ -42,7 +42,9 @@ function WarehouseListItem(props) {
       </WarehouseDeleteModal>
       </div>
       <div className="warehouse-item__actions">
-          <Link onClick={()=>setIsOpen(true)}>
+
+        <Link onClick={() => setIsOpen(true)}>
+
           <img
             className="warehouse-item__icon"
             src={trash}
