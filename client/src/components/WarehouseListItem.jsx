@@ -1,13 +1,13 @@
-import React, { useState } from "react"
+import React,{ useState } from 'react'
 import chevron from "../assets/Icons/chevron_right-24px.svg"
 import trash from "../assets/Icons/delete_outline-24px.svg"
 import pencil from "../assets/Icons/edit-24px.svg"
 import { Link } from "react-router-dom"
 import WarehouseDeleteModal from "./WarehouseDeleteModal"
+import WarehouseDeleteButton from "./WarehouseDeleteButton"
 
 function WarehouseListItem(props) {
-  const [isOpen, setIsOpen] = useState(false)
-
+  const[isOpen, setIsOpen] = useState(false)
   return (
     <li className="list__item">
       <div className="list__info-container">
@@ -37,17 +37,10 @@ function WarehouseListItem(props) {
         </div>
       </div>
       <div>
-        <WarehouseDeleteModal
-          open={isOpen}
-          onClose={() => setIsOpen(false)}
-          deleteWarehouse={props.deleteWarehouse}
-          id={props.id}
-        >
-          <p className="list__modal">
-            {" "}
-            Are you sure you want to delete {props.name} warehouse?{" "}
-          </p>
-        </WarehouseDeleteModal>
+      <WarehouseDeleteModal open={isOpen} onClose={()=>setIsOpen(false)}deleteWarehouse={props.deleteWarehouse} id={props.id}>
+      <p className="list__modal"> Are you sure you want to delete {props.name} warehouse? </p>
+      
+      </WarehouseDeleteModal>
       </div>
       <div className="warehouse-item__actions">
         <Link onClick={() => setIsOpen(true)}>
@@ -56,22 +49,17 @@ function WarehouseListItem(props) {
             src={trash}
             alt="delete button"
           />
+          </Link>
+        <Link to={`/warehouses/${props.id}/edit`}>
+          <img
+            className="warehouse-item__icon"
+            src={pencil}
+            alt="edit button"
+          />
         </Link>
       </div>
-
-      {/* <div className="list__actions">
-        <input
-          className="list__icon"
-          type="image"
-          src={trash}
-          alt="delete button"
-          // onClick={props.toggleDelete}
-        />
-        <Link to={`/warehouses/${props.id}/edit`}>
-          <img className="list__icon" src={pencil} alt="edit button" />
-        </Link>
-      </div> */}
     </li>
+   
   )
 }
 
