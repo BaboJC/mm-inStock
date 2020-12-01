@@ -1,40 +1,42 @@
-
 [
   {
     "id": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
-    "warehouseName": "San Fran",
-    "itemName": "Fix this",
+    "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
+    "warehouseName": "Manhattan",
+    "itemName": "Television",
     "description": "This 50\", 4K LED TV provides a crystal-clear picture and vivid colors.",
-    "category": "Gear",
-    "status": "In Stock"
+    "category": "Electronics",
+    "status": "In Stock",
+    "quantity": 500
   },
   {
     "id": "83433026-ca32-4c6d-bd86-a39ee8b7303e",
     "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
-    "warehouseName": "manhattan",
+    "warehouseName": "Manhattan",
+    "itemName": "Gym Bag",
     "description": "Made out of military-grade synthetic materials, this gym bag is highly durable, water resistant, and easy to clean.",
-    "category": "gear",
-    "status": "instock",
+    "category": "Gear",
+    "status": "Out of Stock",
     "quantity": 0
   },
   {
     "id": "a193a6a7-42ab-4182-97dc-555ee85e7486",
     "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
-    "warehouseName": "manhattan",
+    "warehouseName": "Manhattan",
     "itemName": "Hoodie",
     "description": "A simple 100% cotton hoodie, this is an essential piece for any wardrobe.",
-    "category": "electronics",
-    "status": "nostock",
+    "category": "Apparel",
+    "status": "Out of Stock",
     "quantity": 0
   },
   {
     "id": "8f16bd30-bab5-40af-aca2-b63d5fdd1acc",
     "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
-    "warehouseName": "Seattle",
+    "warehouseName": "Manhattan",
     "itemName": "Keychain",
-    "description": "Another test",
-    "category": "Electronics",
-    "status": "Out of Stock",
+    "description": "Made from 100% genuine leather, this keychain will keep your keys organized while keeping a classic, professional look.",
+    "category": "Accessories",
+    "status": "In Stock",
     "quantity": 2000
   },
   {
@@ -696,52 +698,5 @@
     "category": "Health",
     "status": "Out of Stock",
     "quantity": 0
-  },
-  {
-    "id": "6e04d590-efbe-4357-92ce-93054926ec9b",
-    "warehouseID": "2922c286-16cd-4d43-ab98-c79f698aeab0",
-    "warehouseName": "Meme",
-    "itemName": "Well",
-    "description": "Will always love you",
-    "category": "Other",
-    "status": "In Stock",
-    "quantity": 1
-  },
-  {
-    "id": "d6fd2490-1eea-4f59-8738-c09e5e0c0a58",
-    "warehouseName": "santa monica",
-    "itemName": "A name",
-    "description": "A description",
-    "category": "gear",
-    "status": "nostock",
-    "quantity": "23"
-  },
-  {
-    "id": "1582fd14-acd8-4832-9434-6df686e9b0a5",
-    "warehouseName": "seattle",
-    "itemName": "Test",
-    "description": "TEsting",
-    "category": "apparel",
-    "status": "instock",
-    "quantity": "888888888"
-  },
-  {
-    "id": "657ce3b6-a1e5-47aa-abcd-415307dc2044",
-    "warehouseName": "manhattan",
-    "itemName": "",
-    "description": "",
-    "category": "",
-    "status": "",
-    "quantity": "0"
-  },
-  {
-    "id": "0176ba31-bd63-40c9-b464-36648366a593",
-    "warehouseName": "manhattan",
-    "itemName": "",
-    "description": "",
-    "category": "",
-    "status": "",
-    "quantity": "0"
   }
 ]
-
