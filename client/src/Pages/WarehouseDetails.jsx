@@ -86,7 +86,7 @@ class WarehouseDetails extends React.Component {
               category={inventory.category}
               status={inventory.status}
               quantity={inventory.quantity}
-              warehouseSection={true}
+              warehouseSection={false}
             />
           ))}
         </ul>

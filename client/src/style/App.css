@@ -211,6 +211,10 @@ li {
   margin-top: 0;
 }
 
+.list__section--warehouse {
+  display: none;
+}
+
 .list__item {
   height: 12.25rem;
   padding-top: 1rem;
