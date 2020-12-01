@@ -50,7 +50,13 @@ function addWarehouses(body){
     return itemList
  
 }
-
+// function addWarehouseInventory(bodyInventory){
+//     const inventoryList=listInventories();
+//     const inventoryItem=NewInventory(bodyInventory);
+//     inventoryList.push(inventoryItem);
+//     fs.writeFileSync(dataInventories, JSON.stringify(inventoryList));
+//     return inventoryList
+// }
 
 function NewWarehouses(body){
     return{id: uuidv4(),
@@ -67,9 +73,19 @@ function NewWarehouses(body){
 
     }
 }
-
+// function NewInventory(bodyInventory){
+//     return{warehouseID: uuidv4(),
+//         warehouseName:bodyInventory.name,
+//         itemName:"",
+//         description:"",
+//         category:"",
+//         status:"",
+//         quantity:""
+//     }
+// }
 router.post('/',(req, res)=>{
     res.json(addWarehouses(req.body))
+    // res.json(addWarehouseInventory(req.bodyInventory))
 })
 
 function deleteWarehouse (id){
@@ -89,6 +105,7 @@ router.delete(('/:id'),(req,res)=>{
     res.status(200).json(deleteWarehouse(req.params.id))
 })
 
+
 function patchWarehouse(body){
     const warehousesArray = listWarehouses();
     let newWareArray = warehousesArray.filter((warehouses)=>warehouses.id === body.id).pop();
@@ -96,7 +113,7 @@ function patchWarehouse(body){
     if (body.name) {
         const inventoriesArray = listInventories();
         
-        let newInvArray= inventoriesArray.filter((inventory)=>inventory.warehouseID === newWareArray.id).map((filteredItem) =>{return{...filteredItem, warehouseName:body.name}});
+        let newInvArray= inventoriesArray.filter((inventory)=>inventory.warehouseID !== newWareArray.id).map((filteredItem) =>{return{...filteredItem, warehouseName:body.name}});
         
         let inventoryUpdated = inventoriesArray.filter((inventory)=>inventory.warehouseID !== newWareArray.id);
         inventoryUpdated = [...inventoryUpdated, ...newInvArray];
@@ -112,10 +129,10 @@ function patchWarehouse(body){
         contact:{
             name:body.contact.name ? body.contact.name:newWareArray.contact.name,
             position:body.contact.position ? body.contact.position:newWareArray.contact.position,
-            phone:body.contact.phone ? body.contact.phone:newWareArray,
-            email:body.contact.email ? body.contact.email:newWareArray
+            phone:body.contact.phone ? body.contact.phone:newWareArray.contact.phone,
+            email:body.contact.email ? body.contact.email:newWareArray.contact.email,
         },
-    }
+    };
     const warehouseUpdated = listWarehouses().filter((warehouses)=>warehouses.id !== body.id);
 
     warehouseUpdated.push(newWareArray)
@@ -130,6 +147,5 @@ function patchWarehouse(body){
 router.patch(('/'),(req,res)=>{
     res.json(patchWarehouse(req.body))
 })
-
 
 module.exports=router;

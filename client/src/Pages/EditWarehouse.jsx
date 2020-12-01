@@ -21,9 +21,9 @@ class EditWarehouse extends React.Component {
       })
   }
 
-  submitHandler=(warehouseInfo)=>{
-    warehouseInfo.preventDefault()
-      Axios.patchWarehouse(`http://localhost:5000/warehouses/`,{warehouseInfo})
+  submitHandler=event=>{
+    event.preventDefault()
+      Axios.patchWarehouse(`http://localhost:5000/warehouses/`,this.state.warehouseInfo)
       .then((response)=>{
         this.setState({
           warehouseInfo:response.data,
@@ -115,7 +115,8 @@ class EditWarehouse extends React.Component {
           <h1 className="title__h1">Edit Warehouse</h1>
         </div>
 
-        <form className="form" onSubmit={this.submitHandler}>
+        <form className="form" 
+        onSubmit={(event) => this.submitHandler(event)}>
           <section className="form__section">
             <h2 className="form__h2">Warehouse Details</h2>
             <TextFormInput
@@ -172,11 +173,13 @@ class EditWarehouse extends React.Component {
           </section>
           <section className="form__buttons">
             <button className="form__button">Cancel</button>
-            {/* <input className="form__button form__button--blue" */}
-             {/* type="submit"
-              value="Save" */}
-             {/* /> */}
-            <button onClick={(warehouseInfo)=>{this.submitHandler(warehouseInfo)}}
+            
+            {/* <input className="form__button form__button--blue"
+              type="submit"
+              value="Save" 
+            /> */}
+            <button 
+            // onClick={(event)=>this.submitHandler(this.warehouseInfo)}
               className="form__button form__button--blue">Save
              
               </button>

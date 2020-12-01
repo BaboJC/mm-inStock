@@ -446,6 +446,14 @@ select {
   font-size: 0.6875rem;
 }
 
+.modal__delete {
+  border-radius: 1.25rem;
+  background-color: #c94515;
+  position: absolute;
+  left: 70%;
+  top: 80%;
+}
+
 .inventory-item {
   border-top: 1px solid #bdc5d5;
   padding-left: 1.5rem;

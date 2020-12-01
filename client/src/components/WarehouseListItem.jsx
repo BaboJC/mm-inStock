@@ -39,11 +39,10 @@ function WarehouseListItem(props) {
       <div>
       <WarehouseDeleteModal open={isOpen} onClose={()=>setIsOpen(false)}deleteWarehouse={props.deleteWarehouse} id={props.id}>
       <p className="list__modal"> Are you sure you want to delete {props.name} warehouse? </p>
-      
       </WarehouseDeleteModal>
       </div>
       <div className="warehouse-item__actions">
-          <Link onClick={()=>setIsOpen(true)}>Open Modal
+          <Link onClick={()=>setIsOpen(true)}>
           <img
             className="warehouse-item__icon"
             src={trash}
