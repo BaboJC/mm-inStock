@@ -1,8 +1,8 @@
 import React,{useState} from "react" //for opening and closing of modal
 import WarehouseListItem from "../components/WarehouseListItem"
-import WarehouseDeleteButton from "../components/WarehouseDeleteButton"
 import axios from "axios"
 import { Link } from "react-router-dom"
+import WarehousePopUp from "./WarehouseDeletePopUp"
 
 
 
@@ -11,6 +11,7 @@ class WarehousePage extends React.Component {
 
   state = {
     warehouses: [],
+    deletePopUp: false,
   }
 
   getWarehouseList() {
@@ -41,6 +42,12 @@ class WarehousePage extends React.Component {
   }
   
 
+  // toggleDelete() {
+  //   this.setState({
+  //     deletePopUp: !this.state.deletePopUp,
+  //   })
+  // }
+
   componentDidMount() {
     this.getWarehouseList()
     // this.deleteWarehouse()
@@ -66,6 +73,7 @@ class WarehousePage extends React.Component {
         </div>
         <ul className="list">
           {this.state.warehouses.map((warehouse) => (
+
             <>
               <WarehouseListItem
                 key={warehouse.id}
@@ -95,6 +103,7 @@ class WarehousePage extends React.Component {
         </ul>
   
        
+
       </div>
     )
   }

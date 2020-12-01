@@ -13,6 +13,10 @@
     @include button();
     @include button-main();
   }
+
+  &__back {
+    margin-right: 0.75rem;
+  }
 }
 
 .search-form {

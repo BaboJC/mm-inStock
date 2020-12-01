@@ -5,15 +5,15 @@ import { Link } from "react-router-dom"
 class InventoryItem extends React.Component {
   state = {
     inventoryItem: {
-      id: "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
+      id: "83433026-ca32-4c6d-bd86-a39ee8b7303e",
       warehouseID: "2922c286-16cd-4d43-ab98-c79f698aeab0",
       warehouseName: "Manhattan",
-      itemName: "Television",
+      itemName: "Gym Bag",
       description:
-        'This 50", 4K LED TV provides a crystal-clear picture and vivid colors.',
-      category: "Electronics",
-      status: "In Stock",
-      quantity: 500,
+        "Made out of military-grade synthetic materials, this gym bag is highly durable, water resistant, and easy to clean.",
+      category: "Gear",
+      status: "Out of Stock",
+      quantity: 0,
     },
   }
 
@@ -48,7 +48,7 @@ class InventoryItem extends React.Component {
             <p className="inventory-item__info">{category}</p>
           </div>
         </section>
-        <section className="inventory-item">
+        <section className="inventory-item inventory-item--wrap">
           <div className="inventory-item__container">
             <h4 className="inventory-item__label">status:</h4>
             <div
@@ -61,8 +61,8 @@ class InventoryItem extends React.Component {
               <p
                 className={
                   status === "In Stock"
-                    ? "inventory-item__info inventory-item__info--instock"
-                    : "inventory-item__info inventory-item__info--outofstock"
+                    ? "inventory-item__info inventory-item__info--green"
+                    : "inventory-item__info inventory-item__info--red"
                 }
               >
                 {status}

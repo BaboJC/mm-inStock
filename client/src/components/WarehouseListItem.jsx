@@ -7,7 +7,10 @@ import WarehouseDeleteModal from "./WarehouseDeleteModal"
 import WarehouseDeleteButton from "./WarehouseDeleteButton"
 
 function WarehouseListItem(props) {
-  const[isOpen, setIsOpen] = useState(false)
+  
+function WarehouseListItem(props) {
+  
+
   return (
     <li className="list__item">
       <div className="list__info-container">
@@ -50,12 +53,10 @@ function WarehouseListItem(props) {
             alt="delete button"
           />
           </Link>
+
+
         <Link to={`/warehouses/${props.id}/edit`}>
-          <img
-            className="warehouse-item__icon"
-            src={pencil}
-            alt="edit button"
-          />
+          <img className="list__icon" src={pencil} alt="edit button" />
         </Link>
       </div>
     </li>
