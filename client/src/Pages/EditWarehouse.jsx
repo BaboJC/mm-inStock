@@ -7,6 +7,8 @@ import { Link } from "react-router-dom"
 class EditWarehouse extends React.Component {
   state = {
     warehouseInfo: {},
+    
+    editedWarehouse:{}
   }
 
   getWarehouseDetails(id) {
@@ -21,17 +23,47 @@ class EditWarehouse extends React.Component {
       })
   }
 
-  componentDidMount() {
+  patchWarehouse(id){
+    Axios.patch(`http://localhost:5000/warehouses/${id}`)
+    .then((response)=>{
+      this.setState({
+        editedWarehouse:response.data,
+        
+      })
+      .catch((error) => {
+        console.log(error)
+    })
+  })
+}
+  
+  componentDidMount(){
     const { id } = this.props.match.params
     this.getWarehouseDetails(id)
+    this.patchWarehouse(id)
+   
   }
+  
+  
 
-  handleChange(event) {
-    this.setState({ value: event.target.value })
+  handleInputChange =(event)=> {
+    console.dir(event.target)
+    if(event.target.name==='name'){
+      const updateWarehouse={...this.state.warehouseInfo}
+      updateWarehouse.name=event.target.value
+      this.setState({warehouseInfo:updateWarehouse})
+    }
+    if(event.target.country==='country'){
+      const updateWarehouse={...this.state.warehouseInfo}
+      updateWarehouse.country=event.target.value
+      this.setState({warehouseInfo:updateWarehouse})
+    }
+    console.log(this.state)
+    // this.setState({ value: event.target.value })
   }
 
   render() {
     const { name, address, city, country, contact } = this.state.warehouseInfo
+    // const{editedName, editedAddress, editedCity, editedCountry, editedContact}  = this.state.editedWarehouse
 
     return (
       <div className="card-look">
@@ -54,17 +86,22 @@ class EditWarehouse extends React.Component {
               inputValue="Warehouse Name"
               inputName="name"
               fill={name}
+              handleInputChange={this.handleInputChange}
+              
             />
             <TextFormInput
               inputValue="Street Address"
-              inputName="street"
+              inputName="address"
               fill={address}
+              
+              
             />
             <TextFormInput inputValue="City" inputName="city" fill={city} />
             <TextFormInput
               inputValue="Country"
               inputName="country"
               fill={country}
+              handleInputChange={this.handleInputChange}
             />
           </section>
           <section className="form__section">

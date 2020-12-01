@@ -1,13 +1,16 @@
+import React,{ useState } from 'react'
 import chevron from "../assets/Icons/chevron_right-24px.svg"
 import trash from "../assets/Icons/delete_outline-24px.svg"
 import pencil from "../assets/Icons/edit-24px.svg"
 import { Link } from "react-router-dom"
-import WarehousePopUp from "../Pages/WarehouseDeletePopUp"
+import WarehouseDeleteModal from "./WarehouseDeleteModal"
+import WarehouseDeleteButton from "./WarehouseDeleteButton"
 
 function WarehouseListItem(props) {
-  // const toggleDelete() {
-  //   if (props.deleteState != false)
-  // }
+  
+function WarehouseListItem(props) {
+  
+
   return (
     <li className="list__item">
       <div className="list__info-container">
@@ -36,23 +39,28 @@ function WarehouseListItem(props) {
           <p className="list__info">{props.contact.email}</p>
         </div>
       </div>
+      <div>
+      <WarehouseDeleteModal open={isOpen} onClose={()=>setIsOpen(false)}deleteWarehouse={props.deleteWarehouse} id={props.id}>
+      <p className="list__modal"> Are you sure you want to delete {props.name} warehouse? </p>
+      
+      </WarehouseDeleteModal>
+      </div>
+      <div className="warehouse-item__actions">
+          <Link onClick={()=>setIsOpen(true)}>Open Modal
+          <img
+            className="warehouse-item__icon"
+            src={trash}
+            alt="delete button"
+          />
+          </Link>
 
-      <div className="list__actions">
-        <input
-          className="list__icon"
-          type="image"
-          src={trash}
-          alt="delete button"
-          onClick={props.toggleDelete}
-        />
-        {/* {props.deleteState ? (
-          <WarehousePopUp closePopUp={props.toggleDelete} />
-        ) : null} */}
+
         <Link to={`/warehouses/${props.id}/edit`}>
           <img className="list__icon" src={pencil} alt="edit button" />
         </Link>
       </div>
     </li>
+   
   )
 }
 

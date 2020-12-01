@@ -134,10 +134,6 @@ li {
   background-color: #f7f8f9;
 }
 
-.hidden {
-  display: none;
-}
-
 .title {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -296,6 +292,12 @@ li {
           align-items: center;
 }
 
+
+.list__modal {
+  color: Black;
+  font-family: TitilliumWeb-SemiBold;
+  font-size: 20px;
+
 .list__bottom {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -303,6 +305,7 @@ li {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+
 }
 
 .form__section {

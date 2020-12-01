@@ -1,11 +1,13 @@
-function WarehouseDeleteButton (props) {
+function WarehouseDeleteButton (props){
     return(
         <div>
-            <button>
-                {<img className="warehouse-item__icon"  onClick={()=>{props.deleteWarehouse(props.id)}} alt="delete button" />}
-            </button>
-       </div>
-    )
-
+                <button className="warehouse-item__icon" 
+                onClick={()=>{props.deleteWarehouse(props.id)}}>
+                DELETE COMPONENT
+                 </button> 
+        </div>
+    );
 }
 export default WarehouseDeleteButton;
+
+// ((F)=>{})
