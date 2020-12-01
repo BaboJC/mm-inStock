@@ -67,11 +67,11 @@ function NewWarehouses(body) {
 router.post('/',(req, res)=>{
     res.json(addWarehouses(req.body))
     // res.json(addWarehouseInventory(req.bodyInventory))
+})
 
 
 router.post("/", (req, res) => {
   res.json(addWarehouses(req.body))
-
 })
 
 function deleteWarehouse(id) {
@@ -132,5 +132,4 @@ router.patch("/", (req, res) => {
   res.json(patchWarehouse(req.body))
 })
 
-module.exports=router;
-
+module.exports = router
