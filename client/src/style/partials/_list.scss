@@ -66,3 +66,9 @@
     }
   }
 }
+
+.warehouse {
+  &__list {
+    padding-inline-start: 0;
+  }
+}
