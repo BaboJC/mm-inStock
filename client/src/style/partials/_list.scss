@@ -55,14 +55,20 @@
     align-items: center;
   }
 
-  &__modal{
-    color:Black;
+  &__modal {
+    color: Black;
     font-family: TitilliumWeb-SemiBold;
     font-size: 20px;
 
-  &__bottom {
-    display: flex;
-    justify-content: space-between;
+    &__bottom {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+}
 
+.warehouse {
+  &__list {
+    padding-inline-start: 0;
   }
 }
