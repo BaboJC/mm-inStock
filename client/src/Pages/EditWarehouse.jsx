@@ -7,8 +7,6 @@ import { Link } from "react-router-dom"
 class EditWarehouse extends React.Component {
   state = {
     warehouseInfo: {},
-    
-   
   }
 
   getWarehouseDetails(id) {
@@ -25,7 +23,7 @@ class EditWarehouse extends React.Component {
 
   submitHandler=(warehouseInfo)=>{
     warehouseInfo.preventDefault()
-      Axios.patch(`http://localhost:5000/warehouses/`,{warehouseInfo})
+      Axios.patchWarehouse(`http://localhost:5000/warehouses/`,{warehouseInfo})
       .then((response)=>{
         this.setState({
           warehouseInfo:response.data,
@@ -103,8 +101,6 @@ class EditWarehouse extends React.Component {
 
   render() {
     const { name, address, city, country, contact } = this.state.warehouseInfo
-    // const{editedName, editedAddress, editedCity, editedCountry, editedContact}  = this.state.editedWarehouse
-
     return (
       <div className="card-look">
         <div className="alt-title">
