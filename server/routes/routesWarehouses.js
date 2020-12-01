@@ -50,13 +50,7 @@ function addWarehouses(body){
     return itemList
  
 }
-// function addWarehouseInventory(bodyInventory){
-//     const inventoryList=listInventories();
-//     const inventoryItem=NewInventory(bodyInventory);
-//     inventoryList.push(inventoryItem);
-//     fs.writeFileSync(dataInventories, JSON.stringify(inventoryList));
-//     return inventoryList
-// }
+
 
 function NewWarehouses(body){
     return{id: uuidv4(),
@@ -73,19 +67,9 @@ function NewWarehouses(body){
 
     }
 }
-// function NewInventory(bodyInventory){
-//     return{warehouseID: uuidv4(),
-//         warehouseName:bodyInventory.name,
-//         itemName:"",
-//         description:"",
-//         category:"",
-//         status:"",
-//         quantity:""
-//     }
-// }
+
 router.post('/',(req, res)=>{
     res.json(addWarehouses(req.body))
-    // res.json(addWarehouseInventory(req.bodyInventory))
 })
 
 function deleteWarehouse (id){
