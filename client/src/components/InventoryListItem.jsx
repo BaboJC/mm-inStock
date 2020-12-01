@@ -44,7 +44,7 @@ function InventoryListItem(props) {
           <h4 className="list__label">qty</h4>
           <p className="list__info">{props.quantity}</p>
         </div>
-        <div className="list__section">
+        <div className="list__section list__section--warehouse">
           <h4 className="list__label">warehouse</h4>
           <p className="list__info">{props.name}</p>
         </div>

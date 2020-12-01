@@ -482,11 +482,15 @@ select {
 
 .inventory-item__info--green {
   color: #158463;
+  margin: 0.125rem auto;
+  font-size: 0.625rem;
   font-weight: 700;
 }
 
 .inventory-item__info--red {
   color: #c94515;
+  margin: 0.125rem auto;
+  font-size: 0.625rem;
   font-weight: 700;
 }
 
@@ -500,6 +504,7 @@ select {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 1.25rem;
+  text-transform: uppercase;
 }
 
 .inventory-item__red {
@@ -512,5 +517,6 @@ select {
       -ms-flex-pack: center;
           justify-content: center;
   border-radius: 1.25rem;
+  text-transform: uppercase;
 }
 /*# sourceMappingURL=App.css.map */
