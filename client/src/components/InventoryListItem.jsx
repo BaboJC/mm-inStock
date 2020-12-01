@@ -44,11 +44,6 @@ function InventoryListItem(props) {
           <h4 className="list__label">qty</h4>
           <p className="list__info">{props.quantity}</p>
         </div>
-        <div className={!props.warehouseSection ? "list__section list__section--warehouse" : "list__section"}>
-        {/* <div className="list__section"> */}
-          <h4 className="list__label">warehouse</h4>
-          <p className="list__info">{props.name}</p>
-        </div>
       </div>
       <div className="list__actions">
         <img className="list__icon" src={trash} alt="delete button" />

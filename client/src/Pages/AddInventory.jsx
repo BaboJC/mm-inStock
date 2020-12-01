@@ -22,7 +22,7 @@ function AddInventory() {
       description: description,
       category: category,
       status: status,
-      quantity: quantity
+      quantity: quantity,
     }
 
     Axios.post("http://localhost:5000/inventories/add", newItem)
@@ -48,7 +48,11 @@ function AddInventory() {
       <form className="form" onSubmit={addInventoryItem}>
         <section className="form__section">
           <h2 className="form__h2">Item Details</h2>
-          <TextFormInput inputValue="Item Name" input="name" inputName="itemName" />
+          <TextFormInput
+            inputValue="Item Name"
+            input="name"
+            inputName="itemName"
+          />
           <div className="form__container">
             <label className="form__label" htmlFor="description">
               <h3 className="form__h3">Description</h3>
@@ -63,7 +67,11 @@ function AddInventory() {
             <label className="form__label" htmlFor="category">
               <h3 className="form__h3">Category</h3>
             </label>
-            <select className="form__input form__input--select" name="category" defaultValue="Please select">
+            <select
+              className="form__input form__input--select"
+              name="category"
+              defaultValue="Please select"
+            >
               <option className="form__option" value="">
                 Please select
               </option>
@@ -142,7 +150,10 @@ function AddInventory() {
           </div>
         </section>
         <section className="form__buttons">
-          <button className="form__button">Cancel</button>
+          <Link to="/inventories">
+            <button className="form__button">Cancel</button>
+          </Link>
+
           <input
             className="form__button form__button--blue"
             type="submit"

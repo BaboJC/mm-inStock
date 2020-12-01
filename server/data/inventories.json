@@ -1,10 +1,11 @@
 [
   {
     "id": "9b4f79ea-0e6c-4e59-8e05-afd933d0b3d3",
-    "warehouseName": "manhattan",
+    "warehouseName": "San Fran",
+    "itemName": "Fix this",
     "description": "This 50\", 4K LED TV provides a crystal-clear picture and vivid colors.",
-    "category": "electronics",
-    "status": "instock"
+    "category": "Gear",
+    "status": "In Stock"
   },
   {
     "id": "83433026-ca32-4c6d-bd86-a39ee8b7303e",
@@ -713,5 +714,32 @@
     "category": "gear",
     "status": "nostock",
     "quantity": "23"
+  },
+  {
+    "id": "1582fd14-acd8-4832-9434-6df686e9b0a5",
+    "warehouseName": "seattle",
+    "itemName": "Test",
+    "description": "TEsting",
+    "category": "apparel",
+    "status": "instock",
+    "quantity": "888888888"
+  },
+  {
+    "id": "657ce3b6-a1e5-47aa-abcd-415307dc2044",
+    "warehouseName": "manhattan",
+    "itemName": "",
+    "description": "",
+    "category": "",
+    "status": "",
+    "quantity": "0"
+  },
+  {
+    "id": "0176ba31-bd63-40c9-b464-36648366a593",
+    "warehouseName": "manhattan",
+    "itemName": "",
+    "description": "",
+    "category": "",
+    "status": "",
+    "quantity": "0"
   }
 ]
