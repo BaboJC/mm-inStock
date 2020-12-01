@@ -24,14 +24,10 @@ class WarehousePage extends React.Component {
       })
   }
    deleteWarehouse = (id)=>{
+     alert('Warehouse Deleted')
      axios.delete(`http://localhost:5000/warehouses/${id}`).then((response) =>{
        console.log(response)
        this.setState({warehouses:response.data})
-      //  this.setState((previousState =>{
-      //    return{
-      //      warehouses:previousState.warehouses.filter((warehouse)=>warehouse.id !== id)
-      //    }
-      
        })
        .catch((error) => {
         console.log(error)
@@ -41,7 +37,6 @@ class WarehousePage extends React.Component {
 
   componentDidMount() {
     this.getWarehouseList()
-    // this.deleteWarehouse()
    
   }
   

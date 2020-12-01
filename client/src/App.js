@@ -1,5 +1,18 @@
 import React from "react"
 import "./style/App.css"
+<<<<<<< HEAD
+
+class App extends React.Component {
+  state = {
+    warehouses: [],
+    inventories: [],
+  }
+
+  render() {
+    return (
+      <div>
+        <h1>InStock</h1>
+=======
 import { Switch, Route } from "react-router-dom"
 import Nav from "./components/Nav"
 import WarehouseDetails from "./Pages/WarehouseDetails"
@@ -35,6 +48,7 @@ class App extends React.Component {
           </Switch>
           <Footer />
         </main>
+>>>>>>> development
       </div>
     )
   }

@@ -21,6 +21,7 @@ class EditWarehouse extends React.Component {
       })
   }
 
+
   updateWarehouse = (event) => {
     event.preventDefault()
     const form = event.target
@@ -53,6 +54,7 @@ class EditWarehouse extends React.Component {
       `http://localhost:5000/warehouse/${this.state.warehouseInfo.id}`,
       updatedWarehouse
     ).then(alert("changes have been made"))
+
   }
 
   componentDidMount() {
@@ -77,6 +79,7 @@ class EditWarehouse extends React.Component {
         </div>
 
         <form className="form" onSubmit={this.updateWarehouse}>
+
           <section className="form__section">
             <h2 className="form__h2">Warehouse Details</h2>
             <TextFormInput
@@ -122,11 +125,13 @@ class EditWarehouse extends React.Component {
           </section>
           <section className="form__buttons">
             <button className="form__button">Cancel</button>
+
             <input
               className="form__button form__button--blue"
               type="submit"
               value="Save"
             />
+
           </section>
         </form>
       </div>

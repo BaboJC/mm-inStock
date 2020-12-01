@@ -1,9 +1,9 @@
 function WarehouseDeleteButton (props){
     return(
         <div>
-                <button className="warehouse-item__icon" 
+                <button className="modal__delete" 
                 onClick={()=>{props.deleteWarehouse(props.id)}}>
-                DELETE COMPONENT
+                Delete 
                  </button> 
         </div>
     );
