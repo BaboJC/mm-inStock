@@ -6,7 +6,7 @@ import { Link } from "react-router-dom"
 function InventoryListItem(props) {
   return (
     <li className="list__item">
-      <div className="list__info-container">
+      <div className="list__info-container list__info-container--warehouse ">
         <div className="list__section">
           <h4 className="list__label">inventory item</h4>
           <div className="list__center-container">
@@ -22,11 +22,31 @@ function InventoryListItem(props) {
         </div>
         <div className="list__section">
           <h4 className="list__label">status</h4>
-          <p className="list__info">{props.status}</p>
+          <div
+            className={
+              props.status === "In Stock"
+                ? "inventory-item__green"
+                : "inventory-item__red"
+            }
+          >
+            <p
+              className={
+                props.status === "In Stock"
+                  ? "inventory-item__info inventory-item__info--green"
+                  : "inventory-item__info inventory-item__info--red"
+              }
+            >
+              {props.status}
+            </p>
+          </div>
         </div>
         <div className="list__section">
           <h4 className="list__label">qty</h4>
           <p className="list__info">{props.quantity}</p>
+        </div>
+        <div className="list__section">
+          <h4 className="list__label">warehouse</h4>
+          <p className="list__info">{props.name}</p>
         </div>
       </div>
       <div className="list__actions">

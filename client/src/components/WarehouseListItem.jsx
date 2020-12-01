@@ -5,9 +5,6 @@ import { Link } from "react-router-dom"
 import WarehousePopUp from "../Pages/WarehouseDeletePopUp"
 
 function WarehouseListItem(props) {
-  // const toggleDelete() {
-  //   if (props.deleteState != false)
-  // }
   return (
     <li className="list__item">
       <div className="list__info-container">
@@ -43,11 +40,8 @@ function WarehouseListItem(props) {
           type="image"
           src={trash}
           alt="delete button"
-          onClick={props.toggleDelete}
+          // onClick={props.toggleDelete}
         />
-        {/* {props.deleteState ? (
-          <WarehousePopUp closePopUp={props.toggleDelete} />
-        ) : null} */}
         <Link to={`/warehouses/${props.id}/edit`}>
           <img className="list__icon" src={pencil} alt="edit button" />
         </Link>

@@ -46,6 +46,7 @@ class InventoryList extends React.Component {
             <InventoryListItem
               key={inventory.id}
               id={inventory.id}
+              name={inventory.warehouseName}
               item={inventory.itemName}
               category={inventory.category}
               status={inventory.status}

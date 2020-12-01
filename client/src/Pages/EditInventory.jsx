@@ -2,13 +2,39 @@ import React from "react"
 import arrowback from "../assets/Icons/arrow_back-24px.svg"
 import TextFormInput from "../components/TextFormInput"
 import { Link } from "react-router-dom"
+import Axios from "axios"
 
 class EditInventory extends React.Component {
   state = {
-    inventoryItem: {},
+    inventoryInfo: {},
+  }
+
+  getInventoryDetails(id) {
+    Axios.get(`http://localhost:5000/inventories/${id}`)
+      .then((response) => {
+        this.setState({
+          inventoryInfo: response.data,
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+      })
+  }
+
+  componentDidMount() {
+    const { id } = this.props.match.params
+    this.getInventoryDetails(id)
   }
 
   render() {
+    const {
+      itemName,
+      description,
+      category,
+      status,
+      quantity,
+    } = this.state.inventoryInfo
+    console.log(category)
     return (
       <div className="card-look">
         <div className="alt-title">
@@ -24,7 +50,11 @@ class EditInventory extends React.Component {
         <form className="form">
           <section className="form__section">
             <h2 className="form__h2">Item Details</h2>
-            <TextFormInput inputValue="Item Name" input="name" />
+            <TextFormInput
+              inputValue="Item Name"
+              input="name"
+              fill={itemName}
+            />
             <div className="form__container">
               <label className="form__label" htmlFor="description">
                 <h3 className="form__h3">Description</h3>
@@ -33,6 +63,7 @@ class EditInventory extends React.Component {
                 className="form__description"
                 name="description"
                 placeholder="Please enter a brief description"
+                defaultValue={description}
               />
             </div>
             <div className="form__container">
@@ -42,23 +73,44 @@ class EditInventory extends React.Component {
               <select
                 className="form__input form__input--select"
                 name="category"
+                defaultValue={category}
               >
-                <option className="form__option" value="" selected="selected">
+                <option className="form__option" value="">
                   Please select
                 </option>
-                <option className="form__option" value="electronics">
+                <option
+                  className="form__option"
+                  value="electronics"
+                  selected={category == "Electronics" ? "selected" : false}
+                >
                   Electronics
                 </option>
-                <option className="form__option" value="gear">
+                <option
+                  className="form__option"
+                  value="gear"
+                  selected={category == "Gear" ? "selected" : false}
+                >
                   Gear
                 </option>
-                <option className="form__option" value="apparel">
+                <option
+                  className="form__option"
+                  value="apparel"
+                  selected={category == "Apparel" ? "selected" : false}
+                >
                   Apparel
                 </option>
-                <option className="form__option" value="accessories">
+                <option
+                  className="form__option"
+                  value="accessories"
+                  selected={category == "Accessories" ? "selected" : false}
+                >
                   Accessories
                 </option>
-                <option className="form__option" value="health">
+                <option
+                  className="form__option"
+                  value="health"
+                  selected={category == "Health" ? "selected" : false}
+                >
                   Health
                 </option>
               </select>
@@ -69,7 +121,7 @@ class EditInventory extends React.Component {
             <div className="form__container">
               <h3 className="form__h3">Status</h3>
               <div className="form__status">
-                <input type="radio" name="status" value="instock" />
+                <input type="radio" name="status" value="instock" checked />
                 <label className="form__status-option" htmlFor="status">
                   In Stock
                 </label>
