@@ -42,5 +42,7 @@ yarn-error.log*
 .eslintcache
 Git Path.rtf
 Hargul_Justin_Gus.zip
-# inventories.json
-# warehouses.json
+inventories.json
+warehouses.json
+warehouses.json.orig
+inventories.json.orig
