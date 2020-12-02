@@ -1,6 +1,6 @@
 import React, { Component } from "react"
 
-import WarehouseDeleteButton from "../components/WarehouseDeleteModal"
+
 
 
 class WarehousePopUp extends Component {

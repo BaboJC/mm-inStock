@@ -1,6 +1,11 @@
 .list {
   padding-left: 0;
   margin-top: 0;
+  &__section {
+    &--warehouse {
+      display: none;
+    }
+  }
   &__item {
     height: 12.25rem;
     padding-top: 1rem;

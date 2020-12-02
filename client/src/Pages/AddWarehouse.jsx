@@ -57,7 +57,7 @@ function AddWarehouse() {
       <form className="form" onSubmit={addNewWarehouse}>
         <section className="form__section">
           <h2 className="form__h2">Warehouse Details</h2>
-          <TextFormInput inputValue="Warehouse Name" inputName="name" />
+          <TextFormInput inputValue="Warehouse Name" inputName="name"  />
           <TextFormInput inputValue="Street Address" inputName="street" />
           <TextFormInput inputValue="City" inputName="city" />
           <TextFormInput inputValue="Country" inputName="country" />

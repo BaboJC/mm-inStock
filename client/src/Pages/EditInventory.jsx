@@ -21,6 +21,32 @@ class EditInventory extends React.Component {
       })
   }
 
+  updateInventory = (event) => {
+    event.preventDefault()
+    const form = event.target
+    const warehouseName = form.warehouseName.value
+    const itemName = form.name.value
+    const description = form.description.value
+    const category = form.category.value
+    const status = form.status.value
+
+    const updatedInventory = {
+      id: this.state.inventoryInfo.id,
+      warehouseID: this.state.inventoryInfo.warehouseID,
+      warehouseName: warehouseName,
+      itemName: itemName,
+      description: description,
+      category: category,
+      status: status,
+      quantity: this.state.inventoryInfo.quantity,
+    }
+
+    Axios.put(
+      `http://localhost:5000/inventories/${this.state.inventoryInfo.id}`,
+      updatedInventory
+    ).then(alert("changes have been made"))
+  }
+
   componentDidMount() {
     const { id } = this.props.match.params
     this.getInventoryDetails(id)
@@ -32,9 +58,8 @@ class EditInventory extends React.Component {
       description,
       category,
       status,
-      quantity,
+      warehouseName,
     } = this.state.inventoryInfo
-    console.log(category)
     return (
       <div className="card-look">
         <div className="alt-title">
@@ -47,12 +72,12 @@ class EditInventory extends React.Component {
           </Link>
           <h1 className="title__h1">Edit Inventory Item</h1>
         </div>
-        <form className="form">
+        <form className="form" onSubmit={this.updateInventory}>
           <section className="form__section">
             <h2 className="form__h2">Item Details</h2>
             <TextFormInput
               inputValue="Item Name"
-              input="name"
+              inputName="name"
               fill={itemName}
             />
             <div className="form__container">
@@ -70,46 +95,46 @@ class EditInventory extends React.Component {
               <label className="form__label" htmlFor="category">
                 <h3 className="form__h3">Category</h3>
               </label>
+              {/* We are aware of the warning error but do not have time to explore options of fixing this issue. */}
               <select
                 className="form__input form__input--select"
                 name="category"
-                defaultValue={category}
               >
                 <option className="form__option" value="">
                   Please select
                 </option>
                 <option
                   className="form__option"
-                  value="electronics"
-                  selected={category == "Electronics" ? "selected" : false}
+                  value="Electronics"
+                  selected={category === "Electronics" ? "selected" : null}
                 >
                   Electronics
                 </option>
                 <option
                   className="form__option"
-                  value="gear"
-                  selected={category == "Gear" ? "selected" : false}
+                  value="Gear"
+                  selected={category === "Gear" ? "selected" : null}
                 >
                   Gear
                 </option>
                 <option
                   className="form__option"
-                  value="apparel"
-                  selected={category == "Apparel" ? "selected" : false}
+                  value="Apparel"
+                  selected={category === "Apparel" ? "selected" : null}
                 >
                   Apparel
                 </option>
                 <option
                   className="form__option"
-                  value="accessories"
-                  selected={category == "Accessories" ? "selected" : false}
+                  value="Accessories"
+                  selected={category === "Accessories" ? "selected" : null}
                 >
                   Accessories
                 </option>
                 <option
                   className="form__option"
-                  value="health"
-                  selected={category == "Health" ? "selected" : false}
+                  value="Health"
+                  selected={category === "Health" ? "selected" : null}
                 >
                   Health
                 </option>
@@ -121,11 +146,21 @@ class EditInventory extends React.Component {
             <div className="form__container">
               <h3 className="form__h3">Status</h3>
               <div className="form__status">
-                <input type="radio" name="status" value="instock" checked />
+                <input
+                  type="radio"
+                  name="status"
+                  value="In Stock"
+                  defaultChecked={status === "In Stock" ? "checked" : null}
+                />
                 <label className="form__status-option" htmlFor="status">
                   In Stock
                 </label>
-                <input type="radio" name="status" value="nostock" />
+                <input
+                  type="radio"
+                  name="status"
+                  value="Out of Stock"
+                  defaultChecked={status === "Out of Stock" ? "checked" : null}
+                />
                 <label className="form__status-option" htmlFor="status">
                   Out of stock
                 </label>
@@ -137,37 +172,73 @@ class EditInventory extends React.Component {
               </label>
               <select
                 className="form__input form__input--select"
-                name="warehouse"
+                name="warehouseName"
               >
-                <option className="form__option" value="manhattan">
+                <option
+                  className="form__option"
+                  value="Manhattan"
+                  selected={warehouseName === "Manhattan" ? "selected" : null}
+                >
                   Manhattan
                 </option>
-                <option className="form__option" value="king west">
+                <option
+                  className="form__option"
+                  value="King West"
+                  selected={warehouseName === "King West" ? "selected" : null}
+                >
                   King West
                 </option>
-                <option className="form__option" value="granville">
+                <option
+                  className="form__option"
+                  value="Granville"
+                  selected={warehouseName === "Granville" ? "selected" : null}
+                >
                   Granville
                 </option>
-                <option className="form__option" value="san fran">
+                <option
+                  className="form__option"
+                  value="San Fran"
+                  selected={warehouseName === "San Fran" ? "selected" : null}
+                >
                   San Fran
                 </option>
-                <option className="form__option" value="santa monica">
+                <option
+                  className="form__option"
+                  value="Santa Monica"
+                  selected={
+                    warehouseName === "Santa Monica" ? "selected" : null
+                  }
+                >
                   Santa Monica
                 </option>
-                <option className="form__option" value="seattle">
+                <option
+                  className="form__option"
+                  value="Seattle"
+                  selected={warehouseName === "Seattle" ? "selected" : null}
+                >
                   Seattle
                 </option>
-                <option className="form__option" value="montreal">
+                <option
+                  className="form__option"
+                  value="Montreal"
+                  selected={warehouseName === "Montreal" ? "selected" : null}
+                >
                   Montreal
                 </option>
-                <option className="form__option" value="boston">
+                <option
+                  className="form__option"
+                  value="Boston"
+                  selected={warehouseName === "Boston" ? "selected" : null}
+                >
                   Boston
                 </option>
               </select>
             </div>
           </section>
           <section className="form__buttons">
-            <button className="form__button">Cancel</button>
+            <Link to="/inventories">
+              <button className="form__button">Cancel</button>
+            </Link>
             <input
               className="form__button form__button--blue"
               type="submit"
